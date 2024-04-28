@@ -17,7 +17,7 @@ The card is only yours :smirk_cat:
 
 ### Device considerations
 - :signal_strength: It is essential that the device have an internet connection to use the app.
-- :iphone: The app is designed to be used on mobile devices with small-medium to medium-sized screens. On laptops, desktop computers and tablets with large screens, **THE IMAGES COULD LOOK KINDA WEIRD**.
+- :iphone: The app is designed to be used on mobile devices with small size screens. On laptops, desktop computers and tablets **THE IMAGES COULD LOOK KINDA WEIRD**.
 - :arrow_up_down: To avoid image distortion, the device must be placed vertically (not panoramic) when taking the screenshot.
 
 
