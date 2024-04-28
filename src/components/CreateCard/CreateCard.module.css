@@ -1,0 +1,122 @@
+.createMichiCard {
+  margin: 0 auto;
+  background-color: pink;
+  border: 10px solid black;
+}
+
+.h1Create {
+  font-size: 2rem;
+  margin: 15px auto 0;
+  padding: 0 5px;
+  line-height: 2.5rem;
+}
+
+.h2Create {
+  font-size: 1.2rem;
+  margin: 0 auto 10px;
+  padding: 0 5px;
+  line-height: 2rem;
+}
+
+.or_Create {
+  margin: 15px 0;
+}
+
+.coolCat {
+  width: 60%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.michiPreview {
+  width: 80%;
+  height: auto;
+  border: 6px double black;
+}
+
+.michiName {
+  color: black;
+  width: 66%;
+  height: 2rem;
+  margin: 5px 0 20px;
+  background-color: white;
+  font-size: 1.1rem;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+.atributtes {
+  margin: 5px auto;
+  background-color: white;
+  font-size: 1.1rem;
+  width: 90%;
+  font-family: 'Press Start 2P', monospace;
+  border: 1px black solid;
+  padding: 10px;
+}
+
+::placeholder {
+  font-size: 1rem;
+  text-align: center;
+  padding: 15px;
+}
+
+.charCount {
+  font-size: 0.6rem;
+  text-align: left;
+  margin: 0 10px;
+}
+
+.michiStats {
+  margin: 10px 0;
+}
+
+.photo {
+  margin: 5px auto;
+  display: none;
+}
+
+.blankSpace {
+  color: pink;
+}
+
+.lookMichi {
+  font-family: 'Press Start 2P', monospace;
+  margin: 0 auto 10px;
+  height: 40px;
+  width: 200px;
+  background-color: rgb(231, 231, 231);
+}
+
+.lookMichiLocal {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  background-color: rgb(231, 231, 231);
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.create {
+  height: 40px;
+  width: 100px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.7rem;
+}
+
+.backBtn {
+  height: 30px;
+  width: 50px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  background-color: rgb(190, 190, 190);
+}
+
+.backBtn a,
+.backBtn a:link,
+.backBtn a:visited,
+.backBtn a:active {
+  text-decoration: none;
+  color: black;
+}
