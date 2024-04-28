@@ -1,4 +1,4 @@
-# Michi Card!
+# Michi Card (React version)!
 ## Create Your Own Michi Card Collection! :smiley_cat:
 
 Welcome to this web project, where You can create your very own Kitty Cat Card Collection.\
