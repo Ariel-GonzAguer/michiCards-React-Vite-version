@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import Modal from '../Modal/Modal'
 
 import coolRedCat from '../../resources/img/coolCat.jpg'
 import styles from './CreateCard.module.css'
@@ -11,16 +12,22 @@ export default function CreateCard() {
   const [stats, setStats] = useState({ agility: 1, softness: 1, evilness: 1, goodness: 1, velocity: 1 });
 
   const [preview, setPreview] = useState(null);
-  const [localImg, setlocalImg] = useState(null); 
+  const [localImg, setlocalImg] = useState(null);
   const [image, setImage] = useState(null);
 
   const [characters, setCharacters] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
 
   // handlers
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!image) {
+      setOpen(true);
+      return;
+    }
 
     navigate('/card-created', {
       state: {
@@ -41,7 +48,6 @@ export default function CreateCard() {
   function OnClick_getName(e) {
     e.preventDefault();
     setMichiName(e.target.value);
-    console.log(michiName)
   }
 
 
@@ -187,7 +193,7 @@ export default function CreateCard() {
 
           <p className={styles.or_Create}>Or</p>
 
-          <label htmlFor="photo" className={styles.lookMichiLocal}>Load your own picture</label><br />
+          <label htmlFor="photo" className={styles.lookMichiLocal}>Take your own picture</label><br />
           <input
             type="file"
             name="photo"
@@ -203,9 +209,13 @@ export default function CreateCard() {
               <img className={styles.michiPreview} src={image} alt="preview of the michi" /> <br />
             </>
           }
-          
-          
+
+
           <br />
+          {open && (
+            <Modal setOpen={setOpen} />
+          )
+          }
 
           <label htmlFor="create"></label>
           <button type="submit" name="create" id="create" className={styles.create}>Create!</button>
