@@ -17,6 +17,7 @@ export default function CardCreated() {
 
   const randomAtributte = randomAtributtes[Math.floor(Math.random() * randomAtributtes.length)];
 
+
   useEffect(() => {
     if ((Math.random() * 1000) > 976) {
       setRarity('half-star')
@@ -25,10 +26,11 @@ export default function CardCreated() {
     } else {
       setRarity('false')
     }
+
   }, []);
 
   function goHomePage() {
-    navigate('/');
+    navigate(-1);
   }
 
   return (
@@ -47,7 +49,6 @@ export default function CardCreated() {
 
           <p className={styles.atributtes}>
             {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
-            {atributtes}
           </p>
 
           <ul className={styles.stats}>
@@ -77,7 +78,7 @@ export default function CardCreated() {
           </div>
 
           <p className={styles.atributtes_HalfStar}>
-            {atributtes}
+            {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
           </p>
 
           <ul className={styles.stats_HalfStar}>
@@ -108,7 +109,7 @@ export default function CardCreated() {
 
           <div className={styles.atributtes_FullStar}>
             <p>
-              {atributtes}
+              {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
             </p>
           </div>
 

@@ -1,7 +1,7 @@
 /* regular card */
 .newCard {
   display: grid;
-  grid-template: 15% 40% 30% 10% 5% / repeat(5, 1fr);
+  grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
   width: 100vw;
@@ -28,20 +28,22 @@
 .divCatImg {
   grid-area: 2/1/3/6;
   height: 100%;
+  width: 90%;
   aspect-ratio: 1/1;
   margin: 0 auto;
 }
 .catImg {
   width: 100%;
   height: 100%;
-  border: 10px solid black;
+  object-fit: cover;
+  border: 6px solid black;
 }
 
 .atributtes {
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
-  font-size: 1rem;
+  font-size: 0.95rem;
   width: 90%;
   height: 90%;
   font-family: 'Press Start 2P', monospace;
@@ -59,7 +61,7 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -85,7 +87,7 @@
 /* half star card */
 .newCard_HalfStar {
   display: grid;
-  grid-template: 15% 40% 30% 10% 5% / repeat(5, 1fr);
+  grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
   width: 100vw;
@@ -116,7 +118,8 @@
 .catImg_HalfStar {
   width: 90%;
   height: 100%;
-  border: 10px solid black;
+  object-fit: cover;
+  border: 6px solid black;
 }
 
 .atributtes_HalfStar {
@@ -168,7 +171,7 @@
 /* half full card */
 .newCard_FullStar {
   display: grid;
-  grid-template: 15% 40% 30% 10% 5% / repeat(5, 1fr);
+  grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
   width: 100vw;
@@ -200,6 +203,7 @@
 .catImg_FullStar  {
   width: 90%;
   height: 100%;
+  object-fit: cover;
   border: 10px double whitesmoke;
 }
 

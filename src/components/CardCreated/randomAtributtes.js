@@ -26,6 +26,6 @@ export const randomAtributtes = [
 ];
 
 export function replaceMichiName(string, michiname) {
-  let stringWithMichiName = string.replaceAll('MICHINAME', michiname);
+  let stringWithMichiName = string.replace('MICHINAME', michiname);
   return stringWithMichiName;
 }

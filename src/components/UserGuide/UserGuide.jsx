@@ -32,7 +32,7 @@ export default function UserGuide() {
         You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!<br />
         <span className={styles.hey}> The only two essential requirement on the form to create the card are to write Michi's
           name and choose and option for the picture.</span><br /><br />
-        The name must be a maximum of 9 characters. Choose the name that seems funniest or cutest to you.<br />
+        The name must be a maximum of 11 characters. Choose the name that seems funniest or cutest to you.<br />
         You can write a description about the feline in the 'How is the Michi' section, in 125 characters (including
         spaces) or less. If you don't write anything, no problem, some feline deity will grant the Michi they divine
         personality.<br />
@@ -53,7 +53,7 @@ export default function UserGuide() {
         <span className={styles.hey2}> If you dont load a picture or preview an image, the new Michi Card will not be created.<br /> <span className={styles.hey}>IMPORTANT!</span>The last option You choose for the picture, is the one that will display.</span><br /><br />
         Once the above information is complete, press the 'Create!' button to see the new created Michi Card <FontAwesomeIcon icon={faShieldCat} /><br />
         Now You can take a screenshot to save the new Michi Card on your device!<br /><br />
-        <span className={styles.hey}>Note:</span> to create a New Michi Card, after created one, press the icon to the right of Michi's name to go back to Home Page.
+        <span className={styles.hey}>Note:</span> to create a New Michi Card, after created one, press the icon to the right of Michi's name to go back to Home Create Michi Card section.
       </details>
 
       <details>

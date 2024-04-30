@@ -89,8 +89,7 @@ export default function CreateCard() {
 
   function OnChange_getAtributtes(event) {
     event.preventDefault();
-    const newAtributtes = event.target.value;
-    setAtributtes(newAtributtes);
+      setAtributtes(event.target.value);
     setCharacters(event.target.value.length);
   }
 
@@ -104,7 +103,7 @@ export default function CreateCard() {
         <form onSubmit={handleSubmit}>
 
           <label htmlFor="michiName">Name of the Michi</label><br />
-          <input type="text" name="michiName" id="michiName" className={styles.michiName} maxLength="9" required value={michiName} onChange={OnClick_getName} /><br />
+          <input type="text" name="michiName" id="michiName" className={styles.michiName} maxLength="11" required value={michiName} onChange={OnClick_getName} /><br />
 
           <label htmlFor="atributtes">How is the Michi</label><br />
           <textarea
