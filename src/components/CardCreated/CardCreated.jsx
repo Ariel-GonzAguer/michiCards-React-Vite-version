@@ -17,7 +17,6 @@ export default function CardCreated() {
 
   const randomAtributte = randomAtributtes[Math.floor(Math.random() * randomAtributtes.length)];
 
-
   useEffect(() => {
     if ((Math.random() * 1000) > 976) {
       setRarity('half-star')
