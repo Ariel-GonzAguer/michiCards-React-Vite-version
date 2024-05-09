@@ -92,6 +92,7 @@ export default function CreateCard() {
       setAtributtes(event.target.value);
     setCharacters(event.target.value.length);
   }
+  
 
   return (
     <>

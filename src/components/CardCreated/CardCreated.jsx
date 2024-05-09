@@ -6,7 +6,7 @@ import styles from './CardCreated.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 
-export default function CardCreated() {
+export default function CardCreated({ setLocalCards }) {
   const { michiName, atributtes, image, stats } = useLocation().state;
 
   const { agility, softness, evilness, goodness, velocity } = stats;
@@ -25,6 +25,8 @@ export default function CardCreated() {
     } else {
       setRarity('false')
     }
+
+    createLocalMichiCard(stats);
 
   }, []);
 

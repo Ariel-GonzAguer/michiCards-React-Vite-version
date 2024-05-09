@@ -3,7 +3,7 @@ import styles from '../HomePage.module.css';
 
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretRight, faCat, faBook, faSeedling, faIdBadge } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faCat, faBook, faSeedling, faIdBadge, faSheetPlastic } from '@fortawesome/free-solid-svg-icons'
 
 export default function Menu() {
 
@@ -20,22 +20,29 @@ export default function Menu() {
       name: 'User Guide',
       link: '/user-guide',
       icon: faBook,
-      key: 11, 
+      key: 0, 
       target: '_self'
     },
     'donate': {
       name: 'Donate',
       link: 'https://paypal.me/ariegonzaguer?country.x=CR&locale.x=es_XC',
       icon: faSeedling,
-      key: 111,
+      key: 1,
       target: '_blank'
     },
     'contact': {
       name: 'Contact',
       link: 'https://ariegonzaguer.netlify.app/' ,
       icon: faIdBadge,
-      key: 1111,
+      key: 2,
       target: '_blank'
+    },
+    'localCollection': {
+      name: 'Local Collection',
+      link: '/local-michi-cards' ,
+      icon: faSheetPlastic,
+      key: 3,
+      target: '_self'
     }
 
   };
