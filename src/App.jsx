@@ -12,30 +12,26 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 
 
 export default function App() {
-  const localMichis = window.localStorage;
-  localMichis.getItem("localMichis");
-  const [localCards, setLocalCards] = useState(localMichis || [])
+  // const localMichis = window.localStorage.getItem('localMichiCards')
+  // const [localMichiCards, setLocalMichiCards] = useState(localMichis || {})
+
+  // useEffect(() => {
+  //   window.localStorage.setItem('localMichiCards', localMichiCards)
+  // }, [localMichiCards])
+
+  // function createLocalMichiCard(cardObject) {
+  //   setLocalMichiCards(prev => ({ ...prev, cardObject }))
+  // }
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route path="create" element={<CreateCard />} />
       <Route path="user-guide" element={<UserGuide />} />
-      <Route path="card-created" element={<CardCreated createLocalMichiCard={createLocalMichiCard} />} />
+      <Route path="card-created" element={<CardCreated/>} />
       <Route index element={<HomePage />} />
-      <Route path="local-michi-cards" element={<LocalMichiCards localCards={localCards} />} />
+      <Route path="local-michi-cards" element={<LocalMichiCards/>} />
     </Route>
   ))
-
-  function createLocalMichiCard(stats) {
-    setLocalCards((prev) => [...prev, { ...stats, key: Math.random() }])
-  }
-
-  // Probar solo con uso de windows.localStorage, sin usar useState ni useEffect
-
-
-  useEffect(() => {
-    localMichis.setItem('localCards', localCards);
-  }, [localCards])
 
 
   return (

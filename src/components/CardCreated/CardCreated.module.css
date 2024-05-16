@@ -32,6 +32,7 @@
   aspect-ratio: 1/1;
   margin: 0 auto;
 }
+
 .catImg {
   width: 100%;
   height: 100%;
@@ -86,7 +87,7 @@
 }
 
 /* half star card */
-.newCard_HalfStar {
+.newCard_halfStar {
   display: grid;
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
@@ -98,7 +99,7 @@
   border: 10px solid black;
 }
 
-.michiCardTop_HalfStar {
+.michiCardTop_halfStar {
   height: 100%;
   grid-area: 1/1/2/6;
   display: flex;
@@ -108,22 +109,24 @@
   padding: 0 20px;
 }
 
-.michiName_HalfStar {
+
+.michiName_halfStar {
   font-size: 1.5rem;
 }
 
-.divCatImg_HalfStar {
+.divCatImg_halfStar {
   grid-area: 2/1/3/6;
   height: 100%;
 }
-.catImg_HalfStar {
+
+.catImg_halfStar {
   width: 90%;
   height: 100%;
   object-fit: cover;
   border: 6px solid black;
 }
 
-.atributtes_HalfStar {
+.atributtes_halfStar {
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
@@ -141,7 +144,7 @@
   flex-wrap: wrap;
 }
 
-.stats_HalfStar {
+.stats_halfStar {
   grid-area: 4/1/5/6;
   display: flex;
   align-items: center;
@@ -150,13 +153,13 @@
   width: 100%;
 }
 
-.statLi_HalfStar {
+.statLi_halfStar {
   font-size: 0.45rem;
   list-style: none;
   margin: auto 5px;
 }
 
-.footer_HalfStar {
+.footer_halfStar {
   background-color: white;
   border: 1px dotted black;
   width: 100%;
@@ -164,14 +167,14 @@
   grid-area: 5/1/6/6;
 }
 
-.footer_HalfStar p {
+.footer_halfStar p {
   font-size: 0.45rem;
   line-height: 1.5rem;
 }
 
 
 /* half full card */
-.newCard_FullStar {
+.newCard_fullStar {
   display: grid;
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
@@ -184,7 +187,7 @@
   color: whitesmoke;
 }
 
-.michiCardTop_FullStar  {
+.michiCardTop_fullStar {
   height: 100%;
   grid-area: 1/1/2/6;
   display: flex;
@@ -194,22 +197,23 @@
   padding: 0 20px;
 }
 
-.michiName_FullStar  {
+.michiName_fullStar {
   font-size: 1.5rem;
 }
 
-.divCatImg_FullStar  {
+.divCatImg_fullStar {
   grid-area: 2/1/3/6;
   height: 100%;
 }
-.catImg_FullStar  {
+
+.catImg_fullStar {
   width: 90%;
   height: 100%;
   object-fit: cover;
   border: 10px double whitesmoke;
 }
 
-.atributtes_FullStar  {
+.atributtes_fullStar {
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
@@ -227,7 +231,7 @@
   flex-wrap: wrap;
 }
 
-.stats_FullStar  {
+.stats_fullStar {
   grid-area: 4/1/5/6;
   display: flex;
   align-items: center;
@@ -236,13 +240,13 @@
   width: 100%;
 }
 
-.statLi_FullStar  {
+.statLi_fullStar {
   font-size: 0.45rem;
   list-style: none;
   margin: auto 5px;
 }
 
-.footer_FullStar  {
+.footer_fullStar {
   background-color: white;
   border: 1px dotted whitesmoke;
   color: black;
@@ -251,7 +255,7 @@
   grid-area: 5/1/6/6;
 }
 
-.footer_FullStar p{
+.footer_fullStar p {
   font-size: 0.45rem;
   line-height: 1.5rem;
 }

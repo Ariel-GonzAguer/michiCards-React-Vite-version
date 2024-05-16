@@ -6,28 +6,50 @@ import styles from './CardCreated.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 
-export default function CardCreated({ setLocalCards }) {
+export default function CardCreated() {
   const { michiName, atributtes, image, stats } = useLocation().state;
 
   const { agility, softness, evilness, goodness, velocity } = stats;
 
-  const [rarity, setRarity] = useState('');
+  const [rarity, setRarity] = useState((Math.random() * 1000));
 
   const navigate = useNavigate();
 
   const randomAtributte = randomAtributtes[Math.floor(Math.random() * randomAtributtes.length)];
 
+  let finalAtributtes = atributtes ? atributtes : replaceMichiName(randomAtributte, michiName);
+
   useEffect(() => {
-    if ((Math.random() * 1000) > 976) {
-      setRarity('half-star')
-    } else if ((Math.random() * 1000) === 6) {
-      setRarity('full-star')
+    if (rarity > 976) {
+      setRarity('halfStar')
+    } else if (rarity === 6) {
+      setRarity('fullStar')
     } else {
       setRarity('false')
     }
 
-    createLocalMichiCard(stats);
+    const newCardObject = {
+      michiName: michiName,
+      atributtes: finalAtributtes,
+      image: image,
+      stats: stats,
+      rarity: rarity,
+      key: parseInt((rarity + (Math.random() * 1000)))
+    }
 
+    // Obtener el array actual del localStorage
+    let storedCards = JSON.parse(window.localStorage.getItem('localMichiCards') || '[]');
+
+    // Verificar si storedCards es un array
+    if (!Array.isArray(storedCards)) {
+      storedCards = [];
+    }
+
+    // Agregar el nuevo objeto al array
+    storedCards.push(newCardObject);
+
+    // Guardar el array actualizado en el localStorage
+    window.localStorage.setItem('localMichiCards', JSON.stringify(storedCards));
   }, []);
 
   function goHomePage() {
@@ -49,7 +71,7 @@ export default function CardCreated({ setLocalCards }) {
           </div>
 
           <p className={styles.atributtes}>
-            {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
+            {finalAtributtes}
           </p>
 
           <ul className={styles.stats}>
@@ -67,7 +89,7 @@ export default function CardCreated({ setLocalCards }) {
       }
 
       {
-        rarity === 'half-star' &&
+        rarity === 'halfStar' &&
         <section className={styles.newCard_HalfStar} >
 
           <div className={styles.michiCardTop_HalfStar}>
@@ -79,7 +101,7 @@ export default function CardCreated({ setLocalCards }) {
           </div>
 
           <p className={styles.atributtes_HalfStar}>
-            {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
+            {finalAtributtes}
           </p>
 
           <ul className={styles.stats_HalfStar}>
@@ -97,7 +119,7 @@ export default function CardCreated({ setLocalCards }) {
       }
 
       {
-        rarity === 'full-star' &&
+        rarity === 'fullStar' &&
         <section className={styles.newCard_FullStar} >
 
           <div className={styles.michiCardTop_FullStar}>
@@ -110,7 +132,7 @@ export default function CardCreated({ setLocalCards }) {
 
           <div className={styles.atributtes_FullStar}>
             <p>
-              {atributtes ? atributtes : replaceMichiName(randomAtributte, michiName)}
+              {finalAtributtes}
             </p>
           </div>
 
