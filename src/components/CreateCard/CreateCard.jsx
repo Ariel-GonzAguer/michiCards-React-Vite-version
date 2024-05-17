@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import Modal from '../Modal/Modal'
 
@@ -58,7 +58,7 @@ export default function CreateCard() {
         const response = await fetch('https://api.thecatapi.com/v1/images/search');
         if (response.ok) {
           const jsonResponse = await response.json();
-          if (await jsonResponse[0]['width'] >= '800' && await jsonResponse[0]['height'] >= '500') {
+          if (await jsonResponse[0]['width'] >= '700' && await jsonResponse[0]['height'] >= '400') {
             setPreview(() => jsonResponse[0]['url']);
             setImage(() => jsonResponse[0]['url']);
             break;
@@ -72,16 +72,52 @@ export default function CreateCard() {
     }
   }
 
+  const canvasRef = useRef(null);
+
+  function resizeImage(img, maxWidth, maxHeight) {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    let width = img.width;
+    let height = img.height;
+
+    if (width > height) {
+      if (width > maxWidth) {
+        height *= maxWidth / width;
+        width = maxWidth;
+      }
+    } else {
+      if (height > maxHeight) {
+        width *= maxHeight / height;
+        height = maxHeight;
+      }
+    }
+
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.drawImage(img, 0, 0, width, height);
+
+    const resizedDataURL = canvas.toDataURL('image/jpeg', 0.7); // Ajusta la calidad de la imagen (0.7 = 70%)
+
+    setImage(resizedDataURL);
+  }
+
+
   function OnChange_getLocalImg(e) {
     e.preventDefault();
-
     const file = e.target.files[0];
+    const reader = new FileReader();
 
     if (file) {
-      const reader = new FileReader();
       reader.onload = () => {
-        setImage(reader.result);
-        setlocalImg(reader.result);
+        const localImgEdited = new Image();
+        localImgEdited.src = reader.result;
+        localImgEdited.onload = () => {
+          resizeImage(localImgEdited, 700, 400);
+          setImage(reader.result);
+          setlocalImg(reader.result);
+        }
       }
       reader.readAsDataURL(file);
     }
@@ -89,10 +125,10 @@ export default function CreateCard() {
 
   function OnChange_getAtributtes(event) {
     event.preventDefault();
-      setAtributtes(event.target.value);
+    setAtributtes(event.target.value);
     setCharacters(event.target.value.length);
   }
-  
+
 
   return (
     <>
@@ -194,6 +230,7 @@ export default function CreateCard() {
           <p className={styles.or_Create}>Or</p>
 
           <label htmlFor="photo" className={styles.lookMichiLocal}>Take your own picture</label><br />
+          <canvas ref={canvasRef} style={{ display: 'none' }} />
           <input
             type="file"
             name="photo"
