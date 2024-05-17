@@ -13,8 +13,9 @@ export default function LocalCardCollection() {
 
 
   return (
-
     <section className={styles.LocalCardCollection}>
+
+ {/* falta hacer que se eliminen las cartas */}
       {
         localCardsObject.map(card => {
           if (card.rarity === 6) {
