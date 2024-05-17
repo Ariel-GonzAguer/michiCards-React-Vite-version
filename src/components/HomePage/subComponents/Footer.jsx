@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <section className={styles.footer}>
       <footer >
-        <p>Developed by Ariel Gonz Agüer / diosDeNada</p>
+        <p>Developed by Ariel Gonz-Agüer</p>
       </footer>
     </section>
   )

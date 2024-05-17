@@ -4,8 +4,6 @@
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100%;
   margin: 0 auto;
   background-color: pink;
   border: 10px solid black;
@@ -44,7 +42,6 @@
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
-  font-size: 0.95rem;
   line-height: 1.5rem;
   width: 90%;
   height: 90%;
@@ -92,8 +89,6 @@
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100%;
   margin: 0 auto;
   background-color: #47A0D2;
   border: 10px solid black;
@@ -130,7 +125,6 @@
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
-  font-size: 1rem;
   line-height: 1.5rem;
   width: 90%;
   height: 90%;
@@ -179,8 +173,6 @@
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100%;
   margin: 0 auto;
   background-color: black;
   border: 10px double whitesmoke;
@@ -217,7 +209,6 @@
   grid-area: 3/1/4/6;
   margin: 5px auto;
   background-color: white;
-  font-size: 1rem;
   line-height: 1.5rem;
   width: 90%;
   height: 90%;
@@ -258,4 +249,23 @@
 .footer_fullStar p {
   font-size: 0.45rem;
   line-height: 1.5rem;
+}
+
+.collection {
+  width: 100vw;
+  height: 99.5vh;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.deleteButton {
+  margin: 0 auto 15px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: rgb(247, 107, 107);
+  font-size: 0.6rem;
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -12,7 +12,7 @@ import Footer from "./subComponents/Footer"
 
 export default function HomePage() {
   const [intro, setIntro] = useState(false);
-  
+
   function introAnimation() {
     setTimeout(() => {
       document.getElementById('intro').style.display = 'none';
@@ -21,11 +21,8 @@ export default function HomePage() {
   }
 
   useEffect(() => {
-    introAnimation();
+    introAnimation()
   }, []);
-
-
-
 
   return (
     <>
@@ -33,13 +30,13 @@ export default function HomePage() {
         !intro && <Intro />
       }
 
-    <div className={styles.HomePage}>
-      <Header className={styles.header} />
-      <GifContainer className={styles.gifContainer} />
-      <Menu className={styles.menu} />
-      <Stats className={styles.stats} />
-      <Footer  />
-    </div>
+      <div className={styles.HomePage}>
+        <Header className={styles.header} />
+        <GifContainer className={styles.gifContainer} />
+        <Menu className={styles.menu} />
+        <Stats className={styles.stats} />
+        <Footer />
+      </div>
     </>
   )
 }

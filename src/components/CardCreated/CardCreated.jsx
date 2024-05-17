@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { randomAtributtes, replaceMichiName } from './randomAtributtes'
+import { useDispatch } from 'react-redux'
+import { addNewCard } from '../../redux/localCardsSlice'
 
+import { randomAtributtes, replaceMichiName } from './randomAtributtes'
 import styles from './CardCreated.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function CardCreated() {
+
+  // card info
   const { michiName, atributtes, image, stats } = useLocation().state;
 
   const { agility, softness, evilness, goodness, velocity } = stats;
 
-  const [rarity, setRarity] = useState((Math.random() * 1000));
-
-  const navigate = useNavigate();
+  const [rarity, setRarity] = useState(parseInt(Math.random() * 1000));
 
   const randomAtributte = randomAtributtes[Math.floor(Math.random() * randomAtributtes.length)];
 
   let finalAtributtes = atributtes ? atributtes : replaceMichiName(randomAtributte, michiName);
 
+  // redux
+  const dispatch = useDispatch();
+
+  // router
+  const navigate = useNavigate();
+
   useEffect(() => {
-    if (rarity > 976) {
-      setRarity('halfStar')
-    } else if (rarity === 6) {
+    if (rarity === 6) {
       setRarity('fullStar')
+    } else if (rarity > 976) {
+      setRarity('halfStar')
     } else {
       setRarity('false')
     }
@@ -37,19 +45,8 @@ export default function CardCreated() {
       key: parseInt((rarity + (Math.random() * 1000)))
     }
 
-    // Obtener el array actual del localStorage
-    let storedCards = JSON.parse(window.localStorage.getItem('localMichiCards') || '[]');
+    dispatch(addNewCard(newCardObject));
 
-    // Verificar si storedCards es un array
-    if (!Array.isArray(storedCards)) {
-      storedCards = [];
-    }
-
-    // Agregar el nuevo objeto al array
-    storedCards.push(newCardObject);
-
-    // Guardar el array actualizado en el localStorage
-    window.localStorage.setItem('localMichiCards', JSON.stringify(storedCards));
   }, []);
 
   function goHomePage() {
