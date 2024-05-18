@@ -71,7 +71,7 @@ export default function LocalCardCollection() {
                     <img src={card.image} alt="michi" className={styles.catImg_halfStar} />
                   </div>
 
-                  <div className={styles.atributtes_HalfStar}>
+                  <div className={styles.atributtes_halfStar}>
                     <p>
                       {card.atributtes}
                     </p>
