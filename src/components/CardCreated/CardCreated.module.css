@@ -104,7 +104,6 @@
   padding: 0 20px;
 }
 
-
 .michiName_halfStar {
   font-size: 1.5rem;
 }
@@ -165,7 +164,6 @@
   font-size: 0.45rem;
   line-height: 1.5rem;
 }
-
 
 /* half full card */
 .newCard_fullStar {
@@ -263,6 +261,18 @@
   border-radius: 20px;
   padding: 5px;
   background-color: rgb(247, 107, 107);
+  font-size: 0.6rem;
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goCreateButton {
+  margin: 0 auto 15px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: gainsboro;
   font-size: 0.6rem;
   font-family: 'Press Start 2P', monospace;
   display: flex;
