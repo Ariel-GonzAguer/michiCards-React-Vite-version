@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function CardCreated() {
-
   // card info
   const { michiName, atributtes, image, stats } = useLocation().state;
 
@@ -26,6 +25,9 @@ export default function CardCreated() {
 
   // router
   const navigate = useNavigate();
+  function goHomePage() {
+    navigate(-1);
+  }
 
   useEffect(() => {
     if (rarity === 6) {
@@ -49,10 +51,6 @@ export default function CardCreated() {
       dispatch(addNewCard(newCardObject))
     }
   }, []);
-
-  function goHomePage() {
-    navigate(-1);
-  }
 
   return (
     <>
@@ -94,7 +92,7 @@ export default function CardCreated() {
             <h1 className={styles.michiName_halfStar}>{michiName}</h1> <FontAwesomeIcon onClick={goHomePage} style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
           </div>
 
-          <div className={styles.divCatImg_ahlfStar}>
+          <div className={styles.divCatImg_halfStar}>
             <img src={image} alt="michi" className={styles.catImg_halfStar} />
           </div>
 
@@ -134,7 +132,7 @@ export default function CardCreated() {
             </p>
           </div>
 
-          <ul className={styles.stats_FullStar}>
+          <ul className={styles.stats_fullStar}>
             <li className={styles.statLi_fullStar}>Agility<br />{agility}<br /> <span id="agility"></span></li>
             <li className={styles.statLi_fullStar}>Softness<br />{softness}<br /> <span id="softness"></span></li>
             <li className={styles.statLi_fullStar}>Evilness<br />{evilness}<br /> <span id="evilness"></span></li>

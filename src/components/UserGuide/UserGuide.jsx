@@ -6,12 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsUpDown, faCat, faMobileScreen, faShieldCat, faStar, faStarHalfStroke, faWifi } from '@fortawesome/free-solid-svg-icons'
 
 export default function UserGuide() {
-
+  // router
   const navigate = useNavigate();
 
   return (
     <section className={styles.guide} >
-
       <h1>Welcome to the User Guide!</h1>
       <p className={styles.p_Guide}>Here you could find the answer of all of your questions in life... if the questions are related with Michi Cards
       </p>
@@ -91,11 +90,10 @@ export default function UserGuide() {
 
       <details>
         <summary>Local MichiCards</summary>
-          With this new version of the MichiCards web app, the cards that are created with the random pictures are saved in the browser's Local Storage. The cards will live there until You delete manually the Local Storage of your browser. Also, You can delete individually the cards You don't want more in your Local Storage. Once the card is deleted, is gone forever.<br />
+        With this new version of the MichiCards web app, the cards that are created with the random pictures are saved in the browser's Local Storage. The cards will live there until You delete manually the Local Storage of your browser. Also, You can delete individually the cards You don't want more in your Local Storage. Once the card is deleted, is gone forever.<br />
       </details>
 
       <button className={styles.backBtn} onClick={() => navigate('/')}>Back</button>
-
     </section>
   )
 }

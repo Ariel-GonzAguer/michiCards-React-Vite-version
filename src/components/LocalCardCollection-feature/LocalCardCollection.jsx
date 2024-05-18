@@ -7,12 +7,13 @@ import styles from '../CardCreated/CardCreated.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 
-
 export default function LocalCardCollection() {
   const localCardsObject = useSelector(state => state.localCards)
   const dispatch = useDispatch()
   const [filteredCards, setFilteredCards] = useState(localCardsObject)
 
+  // router
+  const navigate = useNavigate();
   function goHomePage() {
     navigate(-1);
   }
@@ -128,10 +129,7 @@ export default function LocalCardCollection() {
                 <button className={styles.deleteButton} onClick={() => handleDelete(card.key)}>Delete?</button>
               </div>
             )
-
-
           }
-
         })
       }
     </section>

@@ -1,4 +1,3 @@
-// crear store con configureStore
 import { configureStore } from '@reduxjs/toolkit'
 import localCardsSlice from './localCardsSlice'
 

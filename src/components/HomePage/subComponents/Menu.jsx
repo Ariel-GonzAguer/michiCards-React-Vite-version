@@ -14,7 +14,6 @@ export default function Menu() {
       icon: faCat,
       key: 1, 
       target: '_self'
-
     },
     'userGuide': {
       name: 'User Guide',
@@ -44,7 +43,6 @@ export default function Menu() {
       key: 3,
       target: '_self'
     }
-
   };
 
   const options = Object.entries(optionsArray);

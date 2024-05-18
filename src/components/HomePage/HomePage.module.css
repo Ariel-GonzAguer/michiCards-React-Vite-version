@@ -24,7 +24,6 @@
   left: 0px;
   z-index: 1;
   padding: 10px;
-
 }
 
 .header {
@@ -61,14 +60,12 @@
 
 .menuLi {
   margin: 5px 0;
-  
 }
 
 a:link, a:visited, a:active {
 text-decoration: none; 
 color: black;
 }
-
 
 .menuButton {
   color: black;
@@ -83,7 +80,6 @@ color: black;
 .menuButton:active {
   color: white;
 }
-
 
 .stats {
   grid-area: 4/1/5/6;
@@ -112,7 +108,6 @@ color: black;
 .footer p {
   font-size: 0.45rem;
   line-height: 1.5rem;
-  
 }
 
 /*4. Media queries*/
@@ -171,7 +166,7 @@ color: black;
 }
 
 @keyframes blink-1 {
-
+  
   0%,
   50%,
   100% {

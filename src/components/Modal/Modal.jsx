@@ -14,7 +14,6 @@ export default function Modal({ setOpen }) {
         <p>{modal.text}</p>
         <button onClick={() => setOpen(false)} className={styles.close}>{modal.close}</button>
       </dialog>
-
     </>
   )
 }

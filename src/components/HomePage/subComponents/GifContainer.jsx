@@ -14,6 +14,7 @@ export default function GifContainer() {
         }
       } catch (error) {
         console.error(error)
+        setGif('https://http.cat/status/500.jpg');
       }
     }
     getGif();

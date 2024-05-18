@@ -13,6 +13,7 @@ The card is only yours :smirk_cat:
 - By the moment are two *'Feral Cards'*, that are singular types of cards. Go for them!
 - NEW! Now made it with React. The App works smoother.
 - NEW! Navigation improved.
+- NEW! The cards made with Random pictures are saved in Local Storage.
 
 
 ### Device considerations

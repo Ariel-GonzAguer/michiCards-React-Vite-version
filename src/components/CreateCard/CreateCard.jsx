@@ -18,6 +18,7 @@ export default function CreateCard() {
   const [characters, setCharacters] = useState(0);
   const [open, setOpen] = useState(false);
 
+  // router
   const navigate = useNavigate();
 
   // handlers
@@ -45,11 +46,16 @@ export default function CreateCard() {
 
   }
 
-  function OnClick_getName(e) {
+  function onChange_getName(e) {
     e.preventDefault();
     setMichiName(e.target.value);
   }
 
+  function OnChange_getAtributtes(event) {
+    event.preventDefault();
+    setAtributtes(event.target.value);
+    setCharacters(event.target.value.length);
+  }
 
   async function OnClick_getRandomImg(e) {
     e.preventDefault();
@@ -86,13 +92,6 @@ export default function CreateCard() {
     }
   }
 
-  function OnChange_getAtributtes(event) {
-    event.preventDefault();
-    setAtributtes(event.target.value);
-    setCharacters(event.target.value.length);
-  }
-
-
   return (
     <>
       <section className={styles.createMichiCard}>
@@ -103,7 +102,7 @@ export default function CreateCard() {
         <form onSubmit={handleSubmit}>
 
           <label htmlFor="michiName">Name of the Michi</label><br />
-          <input type="text" name="michiName" id="michiName" className={styles.michiName} maxLength="11" required value={michiName} onChange={OnClick_getName} /><br />
+          <input type="text" name="michiName" id="michiName" className={styles.michiName} maxLength="11" required value={michiName} onChange={onChange_getName} /><br />
 
           <label htmlFor="atributtes">How is the Michi</label><br />
           <textarea
@@ -208,12 +207,10 @@ export default function CreateCard() {
               <img className={styles.michiPreview} src={image} alt="preview of the michi" /> <br />
             </>
           }
-
-
           <br />
-          {open && (
-            <Modal setOpen={setOpen} />
-          )
+
+          {
+            open && (<Modal setOpen={setOpen} />)
           }
 
           <label htmlFor="create"></label>
@@ -222,7 +219,6 @@ export default function CreateCard() {
 
         <button onClick={() => navigate('/')} className={styles.backBtn}>Back</button>
       </section>
-
     </>
   )
 }
