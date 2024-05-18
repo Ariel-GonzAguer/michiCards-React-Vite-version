@@ -58,7 +58,7 @@ export default function CreateCard() {
         const response = await fetch('https://api.thecatapi.com/v1/images/search');
         if (response.ok) {
           const jsonResponse = await response.json();
-          if (await jsonResponse[0]['width'] >= '700' && await jsonResponse[0]['height'] >= '400') {
+          if (await jsonResponse[0]['width'] <= '700' && await jsonResponse[0]['height'] <= '400') {
             setPreview(() => jsonResponse[0]['url']);
             setImage(() => jsonResponse[0]['url']);
             break;
@@ -98,9 +98,10 @@ export default function CreateCard() {
 
     ctx.drawImage(img, 0, 0, width, height);
 
-    const resizedDataURL = canvas.toDataURL('image/jpeg', 0.45); // Ajusta la calidad de la imagen (0.5 = 50%)
+    const resizedDataURL = canvas.toDataURL('image/jpeg', 0.2); // Ajusta la calidad de la imagen
 
-    setImage(resizedDataURL);
+    setImage(resizedDataURL)
+    setlocalImg(resizedDataURL)
   }
 
   function OnChange_getLocalImg(e) {
