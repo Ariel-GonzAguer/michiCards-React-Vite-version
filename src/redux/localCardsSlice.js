@@ -11,8 +11,9 @@ const localCardsSlice = createSlice({
       state.push(action.payload);
     },
     deleteCard: (state, action) => {
-      window.localStorage.setItem('localCards', JSON.stringify(state.filter(card => card.key !== action.payload)));
-      return state.filter(card => card.id !== action.payload);
+      const updatedState = state.filter(card => card.key !== action.payload);
+      window.localStorage.setItem('localCards', JSON.stringify(updatedState));
+      return updatedState;
     }
   }
 })
