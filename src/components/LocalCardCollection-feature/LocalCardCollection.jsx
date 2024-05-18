@@ -30,7 +30,7 @@ export default function LocalCardCollection() {
   return (
     <>
       {
-        !localCardsObject.length &&
+        !filteredCards.length &&
         <>
           <h1>Your Local Storage is empty of Michis</h1><br />
           <button onClick={goCreateCard} className={styles.goCreateButton}>Create New Michi Card!</button>
