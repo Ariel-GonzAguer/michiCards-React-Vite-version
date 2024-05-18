@@ -103,7 +103,6 @@ export default function CreateCard() {
     setImage(resizedDataURL);
   }
 
-
   function OnChange_getLocalImg(e) {
     e.preventDefault();
     const file = e.target.files[0];

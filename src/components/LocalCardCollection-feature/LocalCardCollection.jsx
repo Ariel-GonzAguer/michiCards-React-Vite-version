@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react'
 import { deleteCard } from '../../redux/localCardsSlice'
 
 import styles from '../CardCreated/CardCreated.module.css'
@@ -8,16 +9,20 @@ import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-s
 
 export default function LocalCardCollection() {
   const localCardsObject = useSelector(state => state.localCards)
-
   const dispatch = useDispatch()
+  const [filteredCards, setFilteredCards] = useState(localCardsObject)
 
+  function handleDelete(key) {
+    setFilteredCards(filteredCards.filter(card => card.key !== key));
+    dispatch(deleteCard(key));
+  }
 
   return (
     <section className={styles.LocalCardCollection}>
 
- {/* falta hacer que se eliminen las cartas */}
+      {/* falta hacer que se eliminen las cartas */}
       {
-        localCardsObject.map(card => {
+        filteredCards.map(card => {
           if (card.rarity === 6) {
             return (
               <div key={card.key} >
@@ -49,12 +54,9 @@ export default function LocalCardCollection() {
                     <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                   </div>
                 </section>
-                <button className={styles.deleteButton} onClick={() => dispatch(deleteCard(card.key))}>Delete Above Card</button>
+                <button className={styles.deleteButton} onClick={() => handleDelete(card.key)}>Delete?</button>
               </div>
             )
-
-
-
 
           } else if (card.rarity > 976) {
             return (
@@ -87,12 +89,9 @@ export default function LocalCardCollection() {
                     <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                   </div>
                 </section>
-                <button className={styles.deleteButton} onClick={() => dispatch(deleteCard(card.key))}>Delete Above Card</button>
+                <button className={styles.deleteButton} onClick={() => handleDelete(card.key)}>Delete?</button>
               </div>
             )
-
-
-
 
           } else {
             return (
@@ -123,7 +122,7 @@ export default function LocalCardCollection() {
                     <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                   </div>
                 </section>
-                <button className={styles.deleteButton} onClick={() => dispatch(deleteCard(card.key))}>Delete</button>
+                <button className={styles.deleteButton} onClick={() => handleDelete(card.key)}>Delete?</button>
               </div>
             )
 
