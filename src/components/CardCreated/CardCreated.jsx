@@ -45,8 +45,9 @@ export default function CardCreated() {
       key: parseInt((rarity + (Math.random() * 1000)))
     }
 
-    dispatch(addNewCard(newCardObject));
-
+    if (newCardObject.image.startsWith('https')) {
+      dispatch(addNewCard(newCardObject))
+    }
   }, []);
 
   function goHomePage() {
@@ -80,69 +81,69 @@ export default function CardCreated() {
           </ul>
 
           <div className={styles.footer}>
-            <p id="footerCard">Developed by Ariel Gonz Agüer / diosDeNada</p>
+            <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
           </div>
         </section>
       }
 
       {
         rarity === 'halfStar' &&
-        <section className={styles.newCard_HalfStar} >
+        <section className={styles.newCard_halfStar} >
 
-          <div className={styles.michiCardTop_HalfStar}>
-            <h1 className={styles.michiName_HalfStar}>{michiName}</h1> <FontAwesomeIcon onClick={goHomePage} style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
+          <div className={styles.michiCardTop_halfStar}>
+            <h1 className={styles.michiName_halfStar}>{michiName}</h1> <FontAwesomeIcon onClick={goHomePage} style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
           </div>
 
-          <div className={styles.divCatImg_HalfStar}>
-            <img src={image} alt="michi" className={styles.catImg_HalfStar} />
+          <div className={styles.divCatImg_ahlfStar}>
+            <img src={image} alt="michi" className={styles.catImg_halfStar} />
           </div>
 
-          <p className={styles.atributtes_HalfStar}>
+          <p className={styles.atributtes_halfStar}>
             {finalAtributtes}
           </p>
 
-          <ul className={styles.stats_HalfStar}>
-            <li className={styles.statLi_HalfStar}>Agility<br />{agility}<br /> <span id="agility"></span></li>
-            <li className={styles.statLi_HalfStar}>Softness<br />{softness}<br /> <span id="softness"></span></li>
-            <li className={styles.statLi_HalfStar}>Evilness<br />{evilness}<br /> <span id="evilness"></span></li>
-            <li className={styles.statLi_HalfStar}>Goodness<br />{goodness}<br /> <span id="goodness"></span></li>
-            <li className={styles.statLi_HalfStar}>Velocity<br />{velocity}<br /> <span id="velocity"></span></li>
+          <ul className={styles.stats_halfStar}>
+            <li className={styles.statLi_halfStar}>Agility<br />{agility}<br /> <span id="agility"></span></li>
+            <li className={styles.statLi_halfStar}>Softness<br />{softness}<br /> <span id="softness"></span></li>
+            <li className={styles.statLi_halfStar}>Evilness<br />{evilness}<br /> <span id="evilness"></span></li>
+            <li className={styles.statLi_halfStar}>Goodness<br />{goodness}<br /> <span id="goodness"></span></li>
+            <li className={styles.statLi_halfStar}>Velocity<br />{velocity}<br /> <span id="velocity"></span></li>
           </ul>
 
-          <div className={styles.footer_HalfStar}>
-            <p id="footerCard">Developed by Ariel Gonz Agüer / diosDeNada</p>
+          <div className={styles.footer_halfStar}>
+            <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
           </div>
         </section>
       }
 
       {
         rarity === 'fullStar' &&
-        <section className={styles.newCard_FullStar} >
+        <section className={styles.newCard_fullStar} >
 
-          <div className={styles.michiCardTop_FullStar}>
-            <h1 className={styles.michiName_FullStar}>{michiName}</h1> <FontAwesomeIcon onClick={goHomePage} style={{ height: "50px", width: "auto" }} icon={faStar} />
+          <div className={styles.michiCardTop_fullStar}>
+            <h1 className={styles.michiName_fullStar}>{michiName}</h1> <FontAwesomeIcon onClick={goHomePage} style={{ height: "50px", width: "auto" }} icon={faStar} />
           </div>
 
-          <div className={styles.divCatImg_FullStar}>
-            <img src={image} alt="michi" className={styles.catImg_FullStar} />
+          <div className={styles.divCatImg_fullStar}>
+            <img src={image} alt="michi" className={styles.catImg_fullStar} />
           </div>
 
-          <div className={styles.atributtes_FullStar}>
+          <div className={styles.atributtes_fullStar}>
             <p>
               {finalAtributtes}
             </p>
           </div>
 
           <ul className={styles.stats_FullStar}>
-            <li className={styles.statLi_FullStar}>Agility<br />{agility}<br /> <span id="agility"></span></li>
-            <li className={styles.statLi_FullStar}>Softness<br />{softness}<br /> <span id="softness"></span></li>
-            <li className={styles.statLi_FullStar}>Evilness<br />{evilness}<br /> <span id="evilness"></span></li>
-            <li className={styles.statLi_FullStar}>Goodness<br />{goodness}<br /> <span id="goodness"></span></li>
-            <li className={styles.statLi_FullStar}>Velocity<br />{velocity}<br /> <span id="velocity"></span></li>
+            <li className={styles.statLi_fullStar}>Agility<br />{agility}<br /> <span id="agility"></span></li>
+            <li className={styles.statLi_fullStar}>Softness<br />{softness}<br /> <span id="softness"></span></li>
+            <li className={styles.statLi_fullStar}>Evilness<br />{evilness}<br /> <span id="evilness"></span></li>
+            <li className={styles.statLi_fullStar}>Goodness<br />{goodness}<br /> <span id="goodness"></span></li>
+            <li className={styles.statLi_fullStar}>Velocity<br />{velocity}<br /> <span id="velocity"></span></li>
           </ul>
 
-          <div className={styles.footer_FullStar}>
-            <p id="footerCard">Developed by Ariel Gonz Agüer / diosDeNada</p>
+          <div className={styles.footer_fullStar}>
+            <p id="footerCard">Developed by Ariel Gonz-Agüer / diosDeNada</p>
           </div>
         </section>
       }

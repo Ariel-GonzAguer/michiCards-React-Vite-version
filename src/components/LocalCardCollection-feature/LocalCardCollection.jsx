@@ -26,31 +26,31 @@ export default function LocalCardCollection() {
           if (card.rarity === 6) {
             return (
               <div key={card.key} >
-                <section className={`${styles.newCard_FullStar} ${styles.collection}`}>
+                <section className={`${styles.newCard_fullStar} ${styles.collection}`}>
 
-                  <div className={styles.michiCardTop_FullStar}>
-                    <h1 className={styles.michiName_FullStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStar} />
+                  <div className={styles.michiCardTop_fullStar}>
+                    <h1 className={styles.michiName_fullStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStar} />
                   </div>
 
-                  <div className={styles.divCatImg_FullStar}>
-                    <img src={card.image} alt="michi" className={styles.catImg_FullStar} />
+                  <div className={styles.divCatImg_fullStar}>
+                    <img src={card.image} alt="michi" className={styles.catImg_fullStar} />
                   </div>
 
-                  <div className={styles.atributtes_FullStar}>
+                  <div className={styles.atributtes_fullStar}>
                     <p>
                       {card.atributtes}
                     </p>
                   </div>
 
-                  <ul className={styles.stats_FullStar}>
-                    <li className={styles.statLi_FullStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
-                    <li className={styles.statLi_FullStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
-                    <li className={styles.statLi_FullStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
-                    <li className={styles.statLi_FullStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
-                    <li className={styles.statLi_FullStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
+                  <ul className={styles.stats_fullStar}>
+                    <li className={styles.statLi_fullStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
+                    <li className={styles.statLi_fullStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
+                    <li className={styles.statLi_fullStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
+                    <li className={styles.statLi_fullStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
+                    <li className={styles.statLi_fullStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
                   </ul>
 
-                  <div className={styles.footer_FullStar}>
+                  <div className={styles.footer_fullStar}>
                     <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                   </div>
                 </section>
@@ -61,14 +61,14 @@ export default function LocalCardCollection() {
           } else if (card.rarity > 976) {
             return (
               <div key={card.key}>
-                <section className={`${styles.newCard_HalfStar} ${styles.collection}`}>
+                <section className={`${styles.newCard_halfStar} ${styles.collection}`}>
 
-                  <div className={styles.michiCardTop_HalfStar}>
-                    <h1 className={styles.michiName_HalfStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
+                  <div className={styles.michiCardTop_halfStar}>
+                    <h1 className={styles.michiName_halfStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
                   </div>
 
-                  <div className={styles.divCatImg_HalfStar}>
-                    <img src={card.image} alt="michi" className={styles.catImg_HalfStar} />
+                  <div className={styles.divCatImg_halfStar}>
+                    <img src={card.image} alt="michi" className={styles.catImg_halfStar} />
                   </div>
 
                   <div className={styles.atributtes_HalfStar}>
@@ -77,15 +77,15 @@ export default function LocalCardCollection() {
                     </p>
                   </div>
 
-                  <ul className={styles.stats_HalfStar}>
-                    <li className={styles.statLi_HalfStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
-                    <li className={styles.statLi_HalfStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
-                    <li className={styles.statLi_HalfStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
-                    <li className={styles.statLi_HalfStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
-                    <li className={styles.statLi_HalfStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
+                  <ul className={styles.stats_halfStar}>
+                    <li className={styles.statLi_halfStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
+                    <li className={styles.statLi_halfStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
+                    <li className={styles.statLi_halfStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
+                    <li className={styles.statLi_halfStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
+                    <li className={styles.statLi_halfStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
                   </ul>
 
-                  <div className={styles.footer_HalfStar}>
+                  <div className={styles.footer_halfStar}>
                     <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                   </div>
                 </section>

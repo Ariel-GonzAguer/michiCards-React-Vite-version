@@ -43,12 +43,14 @@ export default function UserGuide() {
           <summary>Use your own picture</summary>
           You can take a picture with your device pressing the 'Take your own picture' button.<br />
           Try to put the face of your Michi in the upper section of the picture to have better results.<br />
-          <span className={styles.hey}>IMPORTANT!</span> The picture you take with your device is NOT saved anywhere by default, neither in the server or client file system.<br />
+          <span className={styles.hey}>IMPORTANT!</span> The picture you take with your device is NOT saved anywhere by default, neither in the server or client file system. Also, using this option the MichiCard Will NOT be saved in the Browser's Local Storage.<br />
         </details>
         or<br />
         <details>
           <summary>Use a random picture obtained by the app</summary>
-          Just press 'Get random picture' button to see the kitty cat that will be in the new Michi Card.
+          Just press 'Get random picture' button to see the kitty cat that will be in the new Michi Card.<br />
+          You can press 'Get random picture' as many times as You want to see different pictures.<br />
+          Using this option the MichiCard Will be saved in the Browser's localStorage.s
         </details>
         <span className={styles.hey2}> If you dont load a picture or preview an image, the new Michi Card will not be created.<br /> <span className={styles.hey}>IMPORTANT!</span>The last option You choose for the picture, is the one that will display.</span><br /><br />
         Once the above information is complete, press the 'Create!' button to see the new created Michi Card <FontAwesomeIcon icon={faShieldCat} /><br />
@@ -87,15 +89,9 @@ export default function UserGuide() {
         And the font comes from <a href="https://fonts.google.com/">Google Fonts</a>
       </details>
 
-
-
       <details>
-        <summary>Next improvements</summary>
-        <ul>
-          <li> *Collection of cards within the app.</li>
-          <li> *New feral cards added.</li>
-        </ul>
-
+        <summary>Local MichiCards</summary>
+          With this new version of the MichiCards web app, the cards that are created with the random pictures are saved in the browser's Local Storage. The cards will live there until You delete manually the Local Storage of your browser. Also, You can delete individually the cards You don't want more in your Local Storage. Once the card is deleted, is gone forever.<br />
       </details>
 
       <button className={styles.backBtn} onClick={() => navigate('/')}>Back</button>

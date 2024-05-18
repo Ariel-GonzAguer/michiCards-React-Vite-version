@@ -18,11 +18,11 @@ const localCardsSlice = createSlice({
   initialState: initialState,
   reducers: {
     addNewCard: (state, action) => {
-      // window.localStorage.setItem('localCards', JSON.stringify([...state, action.payload]));
-      // state.push(action.payload);
-      const newCard = action.payload;
-      window.localStorage.setItem(`card_${newCard.key}`, JSON.stringify(newCard));
-      state.push(newCard);
+      window.localStorage.setItem('localCards', JSON.stringify([...state, action.payload]));
+      state.push(action.payload);
+      // const newCard = action.payload;
+      // window.localStorage.setItem(`card_${newCard.key}`, JSON.stringify(newCard));
+      // state.push(newCard);
     },
     deleteCard: (state, action) => {
       window.localStorage.setItem('localCards', JSON.stringify(state.filter(card => card.key !== action.payload)));
