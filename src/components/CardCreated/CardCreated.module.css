@@ -269,3 +269,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.LocalCardCollection {
+  background-color: rgb(255, 223, 228);
+}
