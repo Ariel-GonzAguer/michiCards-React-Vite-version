@@ -98,7 +98,7 @@ export default function CreateCard() {
 
     ctx.drawImage(img, 0, 0, width, height);
 
-    const resizedDataURL = canvas.toDataURL('image/jpeg', 0.7); // Ajusta la calidad de la imagen (0.7 = 70%)
+    const resizedDataURL = canvas.toDataURL('image/jpeg', 0.5); // Ajusta la calidad de la imagen (0.5 = 50%)
 
     setImage(resizedDataURL);
   }
@@ -114,7 +114,7 @@ export default function CreateCard() {
         const localImgEdited = new Image();
         localImgEdited.src = reader.result;
         localImgEdited.onload = () => {
-          resizeImage(localImgEdited, 700, 400);
+          resizeImage(localImgEdited, 500, 300);
           setImage(reader.result);
           setlocalImg(reader.result);
         }
