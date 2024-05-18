@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { deleteCard } from '../../redux/localCardsSlice'
 
 import styles from '../CardCreated/CardCreated.module.css'
@@ -12,6 +13,10 @@ export default function LocalCardCollection() {
   const dispatch = useDispatch()
   const [filteredCards, setFilteredCards] = useState(localCardsObject)
 
+  function goHomePage() {
+    navigate(-1);
+  }
+
   function handleDelete(key) {
     setFilteredCards(filteredCards.filter(card => card.key !== key));
     dispatch(deleteCard(key));
@@ -19,8 +24,6 @@ export default function LocalCardCollection() {
 
   return (
     <section className={styles.LocalCardCollection}>
-
-      {/* falta hacer que se eliminen las cartas */}
       {
         filteredCards.map(card => {
           if (card.rarity === 6) {
@@ -29,7 +32,7 @@ export default function LocalCardCollection() {
                 <section className={`${styles.newCard_fullStar} ${styles.collection}`}>
 
                   <div className={styles.michiCardTop_fullStar}>
-                    <h1 className={styles.michiName_fullStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStar} />
+                    <h1 className={styles.michiName_fullStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStar} onClick={goHomePage} />
                   </div>
 
                   <div className={styles.divCatImg_fullStar}>
@@ -64,7 +67,7 @@ export default function LocalCardCollection() {
                 <section className={`${styles.newCard_halfStar} ${styles.collection}`}>
 
                   <div className={styles.michiCardTop_halfStar}>
-                    <h1 className={styles.michiName_halfStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} />
+                    <h1 className={styles.michiName_halfStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} onClick={goHomePage} />
                   </div>
 
                   <div className={styles.divCatImg_halfStar}>
@@ -99,7 +102,7 @@ export default function LocalCardCollection() {
                 <section className={`${styles.newCard} ${styles.collection}`}>
 
                   <div className={styles.michiCardTop}>
-                    <h1 className={styles.michiName}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faShieldCat} />
+                    <h1 className={styles.michiName}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faShieldCat} onClick={goHomePage} />
                   </div>
 
                   <div className={styles.divCatImg}>
