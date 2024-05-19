@@ -48,13 +48,15 @@ export default function UserGuide() {
         <details>
           <summary>Use a random picture obtained by the app</summary>
           Just press 'Get random picture' button to see the kitty cat that will be in the new Michi Card.<br />
-          You can press 'Get random picture' as many times as You want to see different pictures.<br />
+          You can press 'Get random picture' as many times as You want to see different pictures. Please, keep in mind that each picture fetched consume data.<br />
           Using this option the MichiCard Will be saved in the Browser's localStorage.s
         </details>
-        <span className={styles.hey2}> If you dont load a picture or preview an image, the new Michi Card will not be created.<br /> <span className={styles.hey}>IMPORTANT!</span>The last option You choose for the picture, is the one that will display.</span><br /><br />
+         <br /> <span className={styles.hey}>IMPORTANT!</span><br/>
+         If you don't load a picture or preview an image, the new Michi Card will not be created.<br/>
+         The last option You choose for the picture, is the one that will display.<br /><br />
         Once the above information is complete, press the 'Create!' button to see the new created Michi Card <FontAwesomeIcon icon={faShieldCat} /><br />
         Now You can take a screenshot to save the new Michi Card on your device!<br /><br />
-        <span className={styles.hey}>Note:</span> to create a New Michi Card, after created one, press the icon to the right of Michi's name to go back to Home Create Michi Card section.
+        <span className={styles.hey}>Note:</span> to create a New Michi Card, after created one, press the icon to the right of Michi's name to go back to the Create Michi Card section.
       </details>
 
       <details>
@@ -62,7 +64,7 @@ export default function UserGuide() {
         What is a Feral Card?<br />
         A Feral Card is one that is different from the 'regular' card created with the app.
         The 'regular' Michi Cards have a specific design: Pink background, Michi's name and double border of the card in black, and
-        the only icon on the card is <FontAwesomeIcon icon={faShieldCat} /><br />
+        the icon on the card is <FontAwesomeIcon icon={faShieldCat} /><br />
         When the Michi Card is created, a random number is generated between 0 and 1000. If this number is less than or
         equal to 976, You will have a beautiful 'regular' card, but...<br />
         ...if it is greater than 976 you obtain a 'Half Star' type Feral Card. This type of card is very similar to the
