@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import Modal from '../Modal/Modal'
 
@@ -90,6 +90,11 @@ export default function CreateCard() {
       }
       reader.readAsDataURL(file);
     }
+  }
+
+  const modalContent = {
+    text: 'Preview a random picture or load your own michi',
+    close: {text: 'X', class: 'close'}
   }
 
   return (
@@ -210,7 +215,7 @@ export default function CreateCard() {
           <br />
 
           {
-            open && (<Modal setOpen={setOpen} />)
+            open && (<Modal setOpen={setOpen} modalContent={modalContent} />)
           }
 
           <label htmlFor="create"></label>

@@ -8,7 +8,7 @@ export default function Intro() {
     <>
       <div id='intro' className={styles.intro}>
         <FontAwesomeIcon icon={faShieldCat} style={{ height: "50px", width: "auto", margin: '25px' }} className={styles.blink1} />
-        <p>This game needs small screen size to work properly</p>
+        <p>This game needs phone screen size to work properly</p>
       </div>
     </>
   );

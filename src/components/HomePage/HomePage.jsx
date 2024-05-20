@@ -9,13 +9,13 @@ import Stats from "./subComponents/Stats"
 import Footer from "./subComponents/Footer"
 
 export default function HomePage() {
-  const [intro, setIntro] = useState(false);
+  const [intro, setIntro] = useState(false)
 
   function introAnimation() {
     setTimeout(() => {
       document.getElementById('intro').style.display = 'none';
       setIntro(true);
-    }, 3000)
+    }, 2500)
   }
 
   useEffect(() => {

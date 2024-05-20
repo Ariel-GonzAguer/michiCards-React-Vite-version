@@ -5,6 +5,12 @@ export default function GifContainer() {
   const [gif, setGif] = useState(null);
   const urlCATAAS = 'https://cataas.com/cat/gif';
 
+  const handleImgLoadingError = (e) => {
+    // default image add, if associated image is not available...
+    e.target.src = 'https://http.cat/status/500.jpg';
+
+  };
+
   useEffect(() => {
     async function getGif() {
       try {
@@ -14,7 +20,6 @@ export default function GifContainer() {
         }
       } catch (error) {
         console.error(error)
-        setGif('https://http.cat/status/500.jpg');
       }
     }
     getGif();
@@ -24,7 +29,7 @@ export default function GifContainer() {
   return (
     <div className={styles.gifContainer}>
       {gif
-        ? <img className={styles.michiGif} src={gif} alt='fun kitty gif' />
+        ? <img className={styles.michiGif} src={gif} alt='fun kitty gif' onError={(e) => handleImgLoadingError(e)} />
         : <p>Loading Fun Kitty gif...</p>
       }
     </div>
