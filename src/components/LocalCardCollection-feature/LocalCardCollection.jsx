@@ -93,7 +93,6 @@ export default function LocalCardCollection() {
                     open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
                   }
                   <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
-                  
                 </div>
               )
 
@@ -128,10 +127,10 @@ export default function LocalCardCollection() {
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
                   </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                   {
                     open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
                   }
+                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                 </div>
               )
 
@@ -164,10 +163,10 @@ export default function LocalCardCollection() {
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
                   </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                   {
                     open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
                   }
+                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                 </div>
               )
             }
