@@ -40,7 +40,7 @@ export default function LocalCardCollection() {
   // modal
   const modalContent = {
     text: 'Delete this card forever?',
-    close: {text: 'Cancel', class: 'cancel'},
+    close: { text: 'Cancel', class: 'cancel' },
     button_Two: <button className={stylesModal.button_Two} onClick={() => { handleDelete(cardKeyToDelete); setOpen(false) }}>Delete</button>
   }
 
@@ -87,11 +87,11 @@ export default function LocalCardCollection() {
                     <div className={styles.footer_fullStar}>
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
+                    {/* abre el modal solo para la carta específica que se quiere eliminar */}
+                    {
+                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
+                    }
                   </section>
-                  {/* abre el modal solo para la carta específica que se quiere eliminar */}
-                  {
-                    open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                  }
                   <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                 </div>
               )
@@ -126,10 +126,10 @@ export default function LocalCardCollection() {
                     <div className={styles.footer_halfStar}>
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
+                    {
+                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
+                    }
                   </section>
-                  {
-                    open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                  }
                   <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                 </div>
               )
@@ -162,10 +162,10 @@ export default function LocalCardCollection() {
                     <div className={styles.footer}>
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
+                    {
+                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
+                    }
                   </section>
-                  {
-                    open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                  }
                   <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                 </div>
               )
