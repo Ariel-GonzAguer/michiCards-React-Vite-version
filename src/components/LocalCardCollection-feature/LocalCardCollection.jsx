@@ -88,11 +88,12 @@ export default function LocalCardCollection() {
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
                   </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
                   {/* abre el modal solo para la carta específica que se quiere eliminar */}
                   {
                     open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
                   }
+                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
+                  
                 </div>
               )
 
