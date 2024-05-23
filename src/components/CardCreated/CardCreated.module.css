@@ -283,3 +283,9 @@
 .LocalCardCollection {
   background-color: rgb(255, 223, 228);
 }
+
+.LocalCardCollection .atributtes_fullStar,
+.LocalCardCollection .atributtes_halflStar,
+.LocalCardCollection .atributtes {
+  font-size: 0.9rem;
+}
