@@ -172,7 +172,7 @@ export default function UserGuide() {
         b.<a href='https://thecatapi.com/' target='_blank'>thecatapi</a><br />
 
         5. External Links<br />
-        We are not responsible for the content or privacy practices of third-party websites accessible through links in our web app.<br />
+        We are not responsible for the content or privacy practices of third-party websites accessible through links in our web app.<br /><br />
 
         6. Contact<br />
         For any questions, you can contact us through <a style={{color: 'red'}} href='https://ariegonzaguer.netlify.app/' target='_blank'>{'>'}Contact Page{'<'}</a><br />
