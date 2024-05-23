@@ -51,9 +51,9 @@ export default function UserGuide() {
           You can press 'Get random picture' as many times as You want to see different pictures. Please, keep in mind that each picture fetched consume data.<br />
           Using this option the MichiCard Will be saved in the Browser's localStorage.s
         </details>
-         <br /> <span className={styles.hey}>IMPORTANT!</span><br/>
-         If you don't load a picture or preview an image, the new Michi Card will not be created.<br/>
-         The last option You choose for the picture, is the one that will display.<br /><br />
+        <br /> <span className={styles.hey}>IMPORTANT!</span><br />
+        If you don't load a picture or preview an image, the new Michi Card will not be created.<br />
+        The last option You choose for the picture, is the one that will display.<br /><br />
         Once the above information is complete, press the 'Create!' button to see the new created Michi Card <FontAwesomeIcon icon={faShieldCat} /><br />
         Now You can take a screenshot to save the new Michi Card on your device!<br /><br />
         <span className={styles.hey}>Note:</span> to create a New Michi Card, after created one, press the icon to the right of Michi's name to go back to the Create Michi Card section.
@@ -93,6 +93,89 @@ export default function UserGuide() {
       <details>
         <summary>Local MichiCards</summary>
         With this new version of the MichiCards web app, the cards that are created with the random pictures are saved in the browser's Local Storage. The cards will live there until You delete manually the Local Storage of your browser. Also, You can delete individually the cards You don't want more in your Local Storage. Once the card is deleted, is gone forever.<br />
+      </details>
+
+      <details>
+        <summary>Terms of Use, Privacy Policy and Legal Notice</summary>
+        Terms of use<br />
+
+        1. Introduction<br />
+        Welcome to our web app, where you can create your own Michi Cards! By accessing and using our web app, you agree to comply with these Terms of Use.<br /><br />
+
+        2. Use of the Service<br />
+        Users can upload their own photos and obtain images from an external source to create cards.
+        Users can interact with the web app through their browser, using buttons and text fields, and take photos with their camera.
+        The created cards are only stored in the browser's local storage and are not visible to other users unless the user voluntarily shares them.<br /><br />
+
+        3. Intellectual Property<br />
+        Users own the cards they create using the web app.
+        Photos and letters are not stored on our servers; They are only stored in the local storage of the user's browser.<br /><br />
+
+        4. User Content<br />
+        We do not manage or have access to content created by users, as it is not stored on our servers.
+        Users are responsible for the content they create and must ensure that it does not violate any laws or third-party rights.<br /><br />
+
+        5. Use of External Sources<br />
+        The web app uses images from two external sources:<br />
+        a.<a href='https://cataas.com/' target='_blank'>cataas</a><br />
+        b.<a href='https://thecatapi.com/' target='_blank'>thecatapi</a><br />
+        Users must respect the terms of use of external sources when using the provided images. On the page of each external source you can find related information.<br /><br />
+
+        6. Limitation of Liability<br />
+        We do not guarantee the availability or uninterrupted functionality of the web app.
+        We are not responsible for any damage or loss resulting from the use of the web app.<br /><br />
+
+        7. Modifications<br />
+        We reserve the right to modify these Terms of Use at any time. Changes will be posted on this page.<br /><br />
+
+        8. Contact<br />
+        For any questions, you can contact us through <a style={{color: 'red'}} href='https://ariegonzaguer.netlify.app/' target='_blank'>{'>'}Contact Page{'<'}</a><br /><br />
+
+        Privacy Policy<br />
+
+        1. Introduction<br />
+        This Privacy Policy describes how we handle and protect the information that is generated through our web app.<br /><br />
+
+        2. Information Collected<br />
+        We do not collect personal information from users.
+        The only information stored is the created menu, which includes a description and statistics, and is saved in the browser's local storage.<br /><br />
+
+        3. Use of Information<br />
+        The information stored in local storage is used solely to allow users to access and modify their menus within their browser.<br /><br />
+
+        4. Security<br />
+        The information in local storage is protected by the security measures of the user's browser. Browser security is the user's responsibility.<br /><br />
+
+        5. Share Information<br />
+        We do not share information with third parties as we do not collect or store personal data on our servers.<br /><br />
+
+        6. Changes to the Privacy Policy<br />
+        We reserve the right to modify this Privacy Policy at any time. Changes will be posted on this page.<br /><br />
+
+        7. Contact<br />
+        For any questions, you can contact us through <a style={{color: 'red'}} href='https://ariegonzaguer.netlify.app/' target='_blank'>{'>'}Contact Page{'<'}</a><br /><br />
+
+        Legal warning<br />
+
+        1. General<br />
+        This web app is provided "as is" and "as available", without warranties of any kind.<br /><br />
+
+        2. Responsibility<br />
+        We are not responsible for any direct, indirect, incidental, special or consequential damages resulting from the use of this web app.<br /><br />
+
+        3. Intellectual Property<br />
+        Users are responsible for ensuring that the photos and letters they create do not infringe the rights of third parties.<br /><br />
+
+        4. Use of external sources<br />
+        Users must comply with the terms of use of external sources used in the web app:<br />
+        a.<a href='https://cataas.com/' target='_blank'>cataas</a><br />
+        b.<a href='https://thecatapi.com/' target='_blank'>thecatapi</a><br />
+
+        5. External Links<br />
+        We are not responsible for the content or privacy practices of third-party websites accessible through links in our web app.<br />
+
+        6. Contact<br />
+        For any questions, you can contact us through <a style={{color: 'red'}} href='https://ariegonzaguer.netlify.app/' target='_blank'>{'>'}Contact Page{'<'}</a><br />
       </details>
 
       <button className={styles.backBtn} onClick={() => navigate('/')}>Back</button>
