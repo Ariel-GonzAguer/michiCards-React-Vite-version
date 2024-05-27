@@ -10,7 +10,7 @@ import LocalCardCollection from "./components/LocalCardCollection-feature/LocalC
 export default function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="create" element={<CreateCard />} />
+      <Route path="create" element={<CreateCard />} />  
       <Route path="user-guide" element={<UserGuide />} />
       <Route path="card-created" element={<CardCreated />} />
       <Route index element={<HomePage />} />
