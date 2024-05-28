@@ -87,8 +87,7 @@ export default function LocalCardCollection() {
                     <div className={styles.footer_fullStar}>
                       <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
                     </div>
-                    {/* abre el modal solo para la carta específica que se quiere eliminar */}
-                    {
+                    { /* abre el modal solo para la carta específica que se quiere eliminar */
                       open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
                     }
                   </section>
