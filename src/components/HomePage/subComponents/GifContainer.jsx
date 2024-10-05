@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import styles from '../HomePage.module.css';
+import React, { useState, useEffect } from "react";
+import styles from "../HomePage.module.css";
 
 export default function GifContainer() {
   const [gif, setGif] = useState(null);
-  const urlCATAAS = 'https://cataas.com/cat/gif';
+  const urlCATAAS = "https://cataas.com/cat/gif";
 
   const handleImgLoadingError = (e) => {
-    // default image add, if associated image is not available...
-    e.target.src = 'https://http.cat/status/500.jpg';
-
+    e.target.src = "https://http.cat/status/500.jpg";
   };
 
   useEffect(() => {
@@ -19,19 +17,24 @@ export default function GifContainer() {
           setGif(() => response.url);
         }
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     }
     getGif();
   }, []);
 
-
   return (
     <div className={styles.gifContainer}>
-      {gif
-        ? <img className={styles.michiGif} src={gif} alt='fun kitty gif' onError={(e) => handleImgLoadingError(e)} />
-        : <p>Loading Fun Kitty gif...</p>
-      }
+      {gif ? (
+        <img
+          className={styles.michiGif}
+          src={gif}
+          alt="fun kitty gif"
+          onError={(e) => handleImgLoadingError(e)}
+        />
+      ) : (
+        <p>Loading Fun Kitty gif...</p>
+      )}
     </div>
   );
 }
