@@ -1,106 +1,153 @@
-.createMichiCard {
-  margin: 0 auto;
-  background-color: pink;
-  border: 10px solid black;
-}
-
-.h1Create {
-  font-size: 2rem;
-  margin: 15px auto 0;
-  padding: 0 5px;
-  line-height: 2.5rem;
-}
-
-.h2Create {
-  font-size: 1.2rem;
-  margin: 0 auto 10px;
-  padding: 0 5px;
-  line-height: 2rem;
-}
-
-.or_Create {
-  margin: 15px 0;
-}
-
 .coolCat {
   width: 60%;
   height: auto;
   margin-bottom: 1rem;
 }
 
-.michiPreview {
-  width: 80%;
-  height: auto;
-  border: 6px double black;
+.createMichiCard {
+  margin: 0 auto;
+  background-color: pink;
+  border: 10px solid black;
+
+  & h1 {
+    font-size: 1.5rem;
+    margin: 40px auto 10px;
+    line-height: 2.5rem;
+  }
 }
 
-.michiName {
-  color: black;
-  width: 66%;
-  height: 2rem;
-  margin: 5px 0 20px;
-  background-color: white;
-  font-size: 1.1rem;
-  font-family: 'Press Start 2P', monospace;
-  text-align: center;
-}
+form {
+  & .michiName {
+    color: black;
+    width: 66%;
+    height: 2rem;
+    margin: 5px 0 20px;
+    background-color: white;
+    font-size: 1.1rem;
+    font-family: "Press Start 2P", monospace;
+    text-align: center;
+  }
 
-.atributtes {
-  margin: 5px auto;
-  background-color: white;
-  font-size: 1.1rem;
-  width: 90%;
-  font-family: 'Press Start 2P', monospace;
-  border: 1px black solid;
-  padding: 10px;
-}
+  & h2 {
+    font-size: 1.2rem;
+    margin: 0 auto 10px;
+    padding: 0 5px;
+    line-height: 2rem;
+  }
 
-::placeholder {
-  font-size: 1rem;
-  text-align: center;
-  padding: 15px;
+  & input {
+    border: 2px solid palevioletred;
+  }
+
+  textarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: 5px auto;
+    background-color: white;
+    font-size: 1.1rem;
+    width: 90%;
+    font-family: "Press Start 2P", monospace;
+    border: 2px solid palevioletred;
+    padding: 10px;
+    height: 195px;
+
+    &::placeholder {
+      padding: 0 auto;
+      line-height: 1.66rem;
+    }
+  }
+
+  & .imgOptionsDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto;
+    width: 90%;
+
+    & .lookMichi {
+      all: unset;
+      border: 1px solid black;
+      padding: 4px;
+      background-color: rgb(231, 231, 231);
+      font-family: "Press Start 2P", monospace;
+      margin: 0 5px 10px;
+      height: 50px;
+      width: 200px;
+    }
+  }
+
+  .statsContainer {
+    & p {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .charCount {
   font-size: 0.6rem;
   text-align: left;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 .michiStats {
-  margin: 10px 0;
+  appearance: none; /* Elimina el estilo predeterminado */
+  -webkit-appearance: none; /* Elimina el estilo predeterminado en navegadores WebKit */
+  width: 90%;
+  height: 18px;
+  background: linear-gradient(
+    to right,
+    palevioletred 0%,
+    palevioletred var(--value),
+    whitesmoke var(--value),
+    whitesmoke 100%
+  );
+  border: none;
+  border-radius: 15px;
+  margin: 4px auto 10px;
+  transition: background 0.3s;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: palevioletred;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: palevioletred;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 }
 
-.photo {
-  margin: 5px auto;
+.photoInput {
   display: none;
 }
 
-.blankSpace {
-  color: pink;
-}
-
-.lookMichi {
-  font-family: 'Press Start 2P', monospace;
-  margin: 0 auto 10px;
-  height: 40px;
-  width: 200px;
-  background-color: rgb(231, 231, 231);
-}
-
-.lookMichiLocal {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.8rem;
-  background-color: rgb(231, 231, 231);
-  border: 2px solid black;
-  padding: 5px;
+.michiPreview {
+  width: 80%;
+  height: auto;
+  max-height: 300px;
+  border: 9px solid black;
+  outline: 5px solid palevioletred;
+  outline-offset: -7px;
+  object-fit: fill;
+  object-position: center;
 }
 
 .create {
   height: 40px;
   width: 100px;
-  margin-bottom: 10px;
-  font-family: 'Press Start 2P', monospace;
+  margin: 10px auto;
+  font-family: "Press Start 2P", monospace;
   font-size: 0.7rem;
 }
 
@@ -108,7 +155,7 @@
   height: 30px;
   width: 50px;
   margin-bottom: 10px;
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 0.5rem;
   background-color: rgb(190, 190, 190);
 }
