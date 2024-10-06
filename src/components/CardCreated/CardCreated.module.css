@@ -1,21 +1,79 @@
-/* Variables */
-/* :root {
-  --border-color: black;
-  --background-color: white;
-  --line-height: 1.5rem;
-  --width-percentage: 90%;
-  --font-size-h1: 1.5rem;
-} */
+.common {
+  background-color: pink;
+  border: 10px solid black;
 
-/* common card */
+  & img {
+    outline-offset: -7px;
+    border: 9px solid black;
+    outline: 5px solid palevioletred;
+  }
+
+  .atributtes {
+    border: 1px black solid;
+  }
+
+  .icon {
+    border: none;
+  }
+}
+
+.halfStar {
+  background-color: #47a0d2;
+  border: 10px solid black;
+
+  & img {
+    outline-offset: -7px;
+    border: 9px solid black;
+    outline: 5px solid silver;
+  }
+
+  & .icon {
+    color: silver;
+    border: none;
+  }
+
+  & .atributtes {
+    border: 3px blue solid;
+  }
+}
+
+.fullStar {
+  background-color: black;
+  border: 10px double whitesmoke;
+  color: black;
+
+  & h1,
+  .stats {
+    color: whitesmoke;
+  }
+
+  & img {
+    outline: none;
+    border: 10px double gold;
+  }
+
+  & .icon {
+    color: gold;
+    border: none;
+  }
+
+  & .stats {
+    color: gold;
+  }
+
+  & .atributtes {
+    border: 3px solid goldenrod;
+  }
+}
+
 .newCard {
   display: grid;
   grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  background-color: pink; /* CAMBIAR A PINK */
-  border: 10px solid black;
+  height: 100vh;
+  max-height: 100%;
 }
 
 .michiCardTop {
@@ -43,9 +101,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 9px solid black;
-    outline: 5px solid palevioletred;
-    outline-offset: -7px;
   }
 }
 
@@ -57,7 +112,6 @@
   width: 90%;
   height: 90%;
   font-family: "Press Start 2P", monospace;
-  border: 1px black solid;
   padding: 10px;
   align-items: center;
   justify-content: center;
@@ -89,188 +143,22 @@
   }
 }
 
-.footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: whitesmoke;
   border-top: 1px dotted black;
   width: 100%;
   height: 70%;
   position: relative;
-  bottom: -10px;
+  bottom: -8px;
   grid-area: 5/1/6/6;
 
   & p {
     font-size: 0.45rem;
     line-height: 1.5rem;
   }
-}
-
-/* half star card */
-.newCard_halfStar {
-  display: grid;
-  grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  background-color: #47a0d2;
-  border: 10px solid black;
-}
-
-.michiCardTop_halfStar {
-  height: 100%;
-  grid-area: 1/1/2/6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.michiName_halfStar {
-  font-size: 1.5rem;
-}
-
-.divCatImg_halfStar {
-  grid-area: 2/1/3/6;
-  height: 100%;
-}
-
-.catImg_halfStar {
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-  border: 6px solid black;
-}
-
-.atributtes_halfStar {
-  grid-area: 3/1/4/6;
-  margin: 5px auto;
-  background-color: white;
-  line-height: 1.5rem;
-  width: 90%;
-  height: 90%;
-  font-family: "Press Start 2P", monospace;
-  border: 1px black solid;
-  padding: 10px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.stats_halfStar {
-  grid-area: 4/1/5/6;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.statLi_halfStar {
-  font-size: 0.45rem;
-  list-style: none;
-  margin: auto 5px;
-}
-
-.footer_halfStar {
-  background-color: white;
-  border: 1px dotted black;
-  width: 100%;
-  height: 100%;
-  grid-area: 5/1/6/6;
-}
-
-.footer_halfStar p {
-  font-size: 0.45rem;
-  line-height: 1.5rem;
-}
-
-/* full card */
-.newCard_fullStar {
-  display: grid;
-  grid-template: 15% 40% 34% 7% 4% / repeat(5, 1fr);
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  background-color: black;
-  border: 10px double whitesmoke;
-  color: whitesmoke;
-}
-
-.michiCardTop_fullStar {
-  height: 100%;
-  grid-area: 1/1/2/6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.michiName_fullStar {
-  font-size: 1.5rem;
-}
-
-.divCatImg_fullStar {
-  grid-area: 2/1/3/6;
-  height: 100%;
-}
-
-.catImg_fullStar {
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-  border: 10px double whitesmoke;
-}
-
-.atributtes_fullStar {
-  grid-area: 3/1/4/6;
-  margin: 5px auto;
-  background-color: white;
-  line-height: 1.5rem;
-  width: 90%;
-  height: 90%;
-  font-family: "Press Start 2P", monospace;
-  border: 1px black solid;
-  padding: 10px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.stats_fullStar {
-  grid-area: 4/1/5/6;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.statLi_fullStar {
-  font-size: 0.45rem;
-  list-style: none;
-  margin: auto 5px;
-}
-
-.footer_fullStar {
-  background-color: white;
-  border: 1px dotted whitesmoke;
-  color: black;
-  width: 100%;
-  height: 100%;
-  grid-area: 5/1/6/6;
-}
-
-.footer_fullStar p {
-  font-size: 0.45rem;
-  line-height: 1.5rem;
 }
 
 /* collection */
