@@ -13,7 +13,7 @@ export default function Stats() {
       {stats.map((stat, index) => (
         <li key={index}>
           <span className={styles.statName}>{stat}</span>
-          <span className={styles.statNumber}>{randomStats()}</span>
+          <span>{randomStats()}</span>
         </li>
       ))}
     </ul>

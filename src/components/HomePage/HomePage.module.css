@@ -115,11 +115,11 @@ a:active {
   position: relative;
   bottom: -10px;
   grid-area: 5/1/6/6;
-}
 
-.footer p {
-  font-size: 0.45rem;
-  line-height: 1.5rem;
+  & p {
+    font-size: 0.45rem;
+    line-height: 1.5rem;
+  }
 }
 
 /*4. Media queries*/
