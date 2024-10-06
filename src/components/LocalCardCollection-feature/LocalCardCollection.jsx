@@ -1,21 +1,28 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { deleteCard } from '../../redux/localCardsSlice'
-
-import styles from '../CardCreated/CardCreated.module.css'
-import stylesModal from '../Modal/Modal.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShieldCat, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
-import Modal from '../Modal/Modal'
+import React, { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { deleteCard } from "../../redux/localCardsSlice";
+import styles from "../CardCreated/CardCreated.module.css";
+import stylesModal from "../Modal/Modal.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShieldCat,
+  faStarHalfStroke,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
+import Modal from "../Modal/Modal";
+import html2canvas from "html2canvas";
 
 export default function LocalCardCollection() {
-  const localCardsObject = useSelector(state => state.localCards)
-  const dispatch = useDispatch()
-  const [filteredCards, setFilteredCards] = useState(localCardsObject)
+  const localCardsObject = useSelector((state) => state.localCards);
+  const dispatch = useDispatch();
+  const [filteredCards, setFilteredCards] = useState(localCardsObject);
 
   const [open, setOpen] = useState(false);
   const [cardKeyToDelete, setCardKeyToDelete] = useState(null);
+  const [clickCount, setClickCount] = useState(0);
+  const [modalPosition, setModalPosition] = useState({ top: 550, left: 21 });
+  const cardRefs = useRef({});
 
   // router
   const navigate = useNavigate();
@@ -24,154 +31,170 @@ export default function LocalCardCollection() {
   }
 
   function goCreateCard() {
-    navigate('/create');
+    navigate("/create");
   }
 
   function handleDelete(key) {
-    setFilteredCards(filteredCards.filter(card => card.key !== key));
+    setFilteredCards(filteredCards.filter((card) => card.key !== key));
     dispatch(deleteCard(key));
   }
 
-  function openModalToDelete(key) {
+  function openModalToDelete(key, cardId) {
     setCardKeyToDelete(key);
+    const cardElement = cardRefs.current[cardId];
+    if (cardElement) {
+      const rect = cardElement.getBoundingClientRect();
+      setModalPosition({
+        top: rect.top + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+    }
     setOpen(true);
   }
 
+  async function handleScreenshot(cardId) {
+    const cardElement = document.getElementById(cardId);
+    if (!cardElement) {
+      console.error("Element not found:", cardId);
+      return;
+    }
+    const canvas = await html2canvas(cardElement);
+    const dataUrl = canvas.toDataURL("image/png");
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Check out my Michi Card!",
+          text: "Here's my Michi Card from MichiCards!",
+          files: [new File([dataUrl], "michi-card.png", { type: "image/png" })],
+        })
+        .catch((error) => console.error("Error sharing", error));
+    } else {
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = "michi-card.png";
+      link.click();
+    }
+  }
+
+  function handleCardClick(cardId) {
+    setClickCount((prevCount) => prevCount + 1);
+
+    if (clickCount === 2) {
+      handleScreenshot(cardId);
+      setClickCount(0);
+    }
+  }
+
+  useEffect(() => {
+    if (clickCount > 0) {
+      const timer = setTimeout(() => {
+        setClickCount(0);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [clickCount]);
+
   // modal
   const modalContent = {
-    text: 'Delete this card forever?',
-    close: { text: 'Cancel', class: 'cancel' },
-    button_Two: <button className={stylesModal.button_Two} onClick={() => { handleDelete(cardKeyToDelete); setOpen(false) }}>Delete</button>
-  }
+    text: "Delete this card forever?",
+    close: { text: "Cancel", class: "cancel" },
+    button_Two: (
+      <button
+        className={stylesModal.button_Two}
+        onClick={() => {
+          handleDelete(cardKeyToDelete);
+          setOpen(false);
+        }}
+      >
+        Delete
+      </button>
+    ),
+  };
 
   return (
     <>
-      {
-        !filteredCards.length &&
+      {!filteredCards.length && (
         <>
-          <h1>Your Local Storage is empty of Michis</h1><br />
-          <button onClick={goCreateCard} className={styles.goCreateButton}>Create New Michi Card!</button>
+          <h1>Your Local Storage is empty of Michis</h1>
+          <br />
+          <button onClick={goCreateCard} className={styles.goCreateButton}>
+            Create A New Michi Card!
+          </button>
         </>
-      }
+      )}
 
-      <section className={styles.LocalCardCollection}>
-        {
-          filteredCards.map(card => {
-            if (card.rarity === 6) {
-              return (
-                <div key={card.key} >
-                  <section className={`${styles.newCard_fullStar} ${styles.collection}`}>
-
-                    <div className={styles.michiCardTop_fullStar}>
-                      <h1 className={styles.michiName_fullStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStar} onClick={goHomePage} />
-                    </div>
-
-                    <div className={styles.divCatImg_fullStar}>
-                      <img src={card.image} alt="michi" className={styles.catImg_fullStar} />
-                    </div>
-
-                    <div className={styles.atributtes_fullStar}>
-                      <p>
-                        {card.atributtes}
-                      </p>
-                    </div>
-
-                    <ul className={styles.stats_fullStar}>
-                      <li className={styles.statLi_fullStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
-                      <li className={styles.statLi_fullStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
-                      <li className={styles.statLi_fullStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
-                      <li className={styles.statLi_fullStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
-                      <li className={styles.statLi_fullStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
-                    </ul>
-
-                    <div className={styles.footer_fullStar}>
-                      <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
-                    </div>
-                    { /* abre el modal solo para la carta específica que se quiere eliminar */
-                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                    }
-                  </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
-                </div>
-              )
-
-            } else if (card.rarity > 976) {
-              return (
-                <div key={card.key}>
-                  <section className={`${styles.newCard_halfStar} ${styles.collection}`}>
-
-                    <div className={styles.michiCardTop_halfStar}>
-                      <h1 className={styles.michiName_halfStar}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faStarHalfStroke} onClick={goHomePage} />
-                    </div>
-
-                    <div className={styles.divCatImg_halfStar}>
-                      <img src={card.image} alt="michi" className={styles.catImg_halfStar} />
-                    </div>
-
-                    <div className={styles.atributtes_halfStar}>
-                      <p>
-                        {card.atributtes}
-                      </p>
-                    </div>
-
-                    <ul className={styles.stats_halfStar}>
-                      <li className={styles.statLi_halfStar}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
-                      <li className={styles.statLi_halfStar}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
-                      <li className={styles.statLi_halfStar}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
-                      <li className={styles.statLi_halfStar}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
-                      <li className={styles.statLi_halfStar}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
-                    </ul>
-
-                    <div className={styles.footer_halfStar}>
-                      <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
-                    </div>
-                    {
-                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                    }
-                  </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
-                </div>
-              )
-
-            } else {
-              return (
-                <div key={card.key} >
-                  <section className={`${styles.newCard} ${styles.collection}`}>
-
-                    <div className={styles.michiCardTop}>
-                      <h1 className={styles.michiName}>{card.michiName}</h1> <FontAwesomeIcon style={{ height: "50px", width: "auto" }} icon={faShieldCat} onClick={goHomePage} />
-                    </div>
-
-                    <div className={styles.divCatImg}>
-                      <img src={card.image} alt="michi" className={styles.catImg} />
-                    </div>
-
-                    <p className={styles.atributtes}>
-                      {card.atributtes}
-                    </p>
-
-                    <ul className={styles.stats}>
-                      <li className={styles.statLi}>Agility<br />{card.stats.agility}<br /> <span id="agility"></span></li>
-                      <li className={styles.statLi}>Softness<br />{card.stats.softness}<br /> <span id="softness"></span></li>
-                      <li className={styles.statLi}>Evilness<br />{card.stats.evilness}<br /> <span id="evilness"></span></li>
-                      <li className={styles.statLi}>Goodness<br />{card.stats.goodness}<br /> <span id="goodness"></span></li>
-                      <li className={styles.statLi}>Velocity<br />{card.stats.velocity}<br /> <span id="velocity"></span></li>
-                    </ul>
-
-                    <div className={styles.footer}>
-                      <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
-                    </div>
-                    {
-                      open && cardKeyToDelete === card.key && (<Modal setOpen={setOpen} modalContent={modalContent} />)
-                    }
-                  </section>
-                  <button className={styles.deleteButton} onClick={() => openModalToDelete(card.key)}>Delete?</button>
-                </div>
-              )
-            }
-          })
+      {filteredCards.map((card, index) => {
+        let rarity = "common";
+        if (card.rarity === 6) {
+          rarity = "fullStar";
+        } else if (card.rarity > 976) {
+          rarity = "halfStar";
         }
-      </section>
+
+        return (
+          <>
+            <section
+              key={card.key}
+              id={`card-${card.key}`}
+              ref={(el) => (cardRefs.current[`card-${index}`] = el)}
+              className={`${styles.newCard} ${styles[rarity]}`}
+              onClick={() => handleCardClick(`card-${card.key}`)}
+              style={{ marginBottom: "5px" }} // Añadir espacio entre las cartas
+            >
+              <div className={styles.michiCardTop}>
+                <h1>{card.michiName}</h1>
+                <FontAwesomeIcon
+                  onClick={goHomePage}
+                  style={{ height: "50px", width: "auto" }}
+                  className={`${styles.icon} ${styles[card.rarity]}`}
+                  icon={
+                    rarity === "fullStar"
+                      ? faStar
+                      : rarity === "halfStar"
+                      ? faStarHalfStroke
+                      : faShieldCat
+                  }
+                />
+              </div>
+
+              <div className={styles.divCatImg}>
+                <img src={card.image} alt="michi" className={styles.catImg} />
+              </div>
+
+              <p className={styles.atributtes}>{card.atributtes}</p>
+
+              <ul className={styles.stats}>
+                {Object.entries(card.stats).map(([key, value], statIndex) => (
+                  <li key={`${value}*${Math.random()*1000}`}>
+                    <span className={styles.statName}>{key}</span>
+                    <span className={styles.statNumber}>{value}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <footer>
+                <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
+              </footer>
+            </section>
+            <button
+              className={styles.deleteButton}
+              onClick={() => openModalToDelete(card.key)}
+            >
+              Delete Card
+            </button>
+          </>
+        );
+      })}
+      {open && (
+        <div
+          className={styles.modalDelete}
+          style={{ top: modalPosition.top, left: modalPosition.left }}
+        >
+          <Modal setOpen={setOpen} modalContent={modalContent} />
+        </div>
+      )}
     </>
-  )
+  );
 }

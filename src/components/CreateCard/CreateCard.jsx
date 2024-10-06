@@ -73,7 +73,7 @@ export default function CreateCard() {
         if (response.ok) {
           const jsonResponse = await response.json();
           if (
-            (await jsonResponse[0]["width"]) <= "800" &&
+            (await jsonResponse[0]["width"]) <= "500" &&
             (await jsonResponse[0]["height"]) <= "500"
           ) {
             setImage(() => jsonResponse[0]["url"]);

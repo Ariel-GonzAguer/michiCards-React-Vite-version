@@ -16,8 +16,7 @@ export default function CardCreated() {
   // card info
   const { michiName, atributtes, image, stats } = useLocation().state;
 
-  // const [rarity, setRarity] = useState(parseInt(Math.random() * 1000));
-  const [rarity, setRarity] = useState(parseInt(999));
+  const [rarity, setRarity] = useState(parseInt(Math.random() * 1000));
 
   const randomAtributte =
     randomAtributtes[Math.floor(Math.random() * randomAtributtes.length)];
@@ -50,7 +49,7 @@ export default function CardCreated() {
       image: image,
       stats: stats,
       rarity: rarity,
-      key: parseInt(rarity + Math.random() * 1000),
+      key: Date.now(),
     };
 
     if (newCardObject.image.startsWith("https")) {

@@ -100,7 +100,8 @@
   & img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
+    object-position: center;
   }
 }
 
@@ -162,13 +163,6 @@ footer {
 }
 
 /* collection */
-.collection {
-  width: 100vw;
-  height: 99.5vh;
-  font-size: 0.85rem;
-  margin-bottom: 2px;
-}
-
 .deleteButton {
   margin: 0 auto 15px;
   border-radius: 20px;
@@ -197,8 +191,9 @@ footer {
   background-color: rgb(255, 223, 228);
 }
 
-.LocalCardCollection .atributtes_fullStar,
-.LocalCardCollection .atributtes_halflStar,
-.LocalCardCollection .atributtes {
-  font-size: 0.8rem;
+.modalDelete {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 10px;
+  width: 90%;
 }
