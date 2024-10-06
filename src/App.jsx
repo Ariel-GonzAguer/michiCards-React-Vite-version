@@ -5,7 +5,7 @@ import HomePage from "./components/HomePage/HomePage"
 import CreateCard from "./components/CreateCard/CreateCard"
 import UserGuide from "./components/UserGuide/UserGuide"
 import CardCreated from "./components/CardCreated/CardCreated"
-import LocalCardCollection from "./components/LocalCardCollection-feature/LocalCardCollection"
+import LocalCardCollection from "./components/LocalCardCollection/LocalCardCollection"
 
 export default function App() {
   const router = createBrowserRouter(createRoutesFromElements(

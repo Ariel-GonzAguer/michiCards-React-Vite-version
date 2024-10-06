@@ -20,7 +20,6 @@ export default function LocalCardCollection() {
 
   const [open, setOpen] = useState(false);
   const [cardKeyToDelete, setCardKeyToDelete] = useState(null);
-  const [clickCount, setClickCount] = useState(0);
   const [modalPosition, setModalPosition] = useState({ top: 550, left: 21 });
   const cardRefs = useRef({});
 
@@ -51,50 +50,6 @@ export default function LocalCardCollection() {
     }
     setOpen(true);
   }
-
-  async function handleScreenshot(cardId) {
-    const cardElement = document.getElementById(cardId);
-    if (!cardElement) {
-      console.error("Element not found:", cardId);
-      return;
-    }
-    const canvas = await html2canvas(cardElement);
-    const dataUrl = canvas.toDataURL("image/png");
-
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Check out my Michi Card!",
-          text: "Here's my Michi Card from MichiCards!",
-          files: [new File([dataUrl], "michi-card.png", { type: "image/png" })],
-        })
-        .catch((error) => console.error("Error sharing", error));
-    } else {
-      const link = document.createElement("a");
-      link.href = dataUrl;
-      link.download = "michi-card.png";
-      link.click();
-    }
-  }
-
-  function handleCardClick(cardId) {
-    setClickCount((prevCount) => prevCount + 1);
-
-    if (clickCount === 2) {
-      handleScreenshot(cardId);
-      setClickCount(0);
-    }
-  }
-
-  useEffect(() => {
-    if (clickCount > 0) {
-      const timer = setTimeout(() => {
-        setClickCount(0);
-      }, 500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [clickCount]);
 
   // modal
   const modalContent = {
@@ -140,7 +95,6 @@ export default function LocalCardCollection() {
               id={`card-${card.key}`}
               ref={(el) => (cardRefs.current[`card-${index}`] = el)}
               className={`${styles.newCard} ${styles[rarity]}`}
-              onClick={() => handleCardClick(`card-${card.key}`)}
               style={{ marginBottom: "5px" }} // Añadir espacio entre las cartas
             >
               <div className={styles.michiCardTop}>
