@@ -11,7 +11,6 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Modal/Modal";
-import html2canvas from "html2canvas";
 
 export default function LocalCardCollection() {
   const localCardsObject = useSelector((state) => state.localCards);
@@ -121,7 +120,7 @@ export default function LocalCardCollection() {
 
               <ul className={styles.stats}>
                 {Object.entries(card.stats).map(([key, value], statIndex) => (
-                  <li key={`${value}*${Math.random()*1000}`}>
+                  <li key={`${value}*${Math.random() * 1000}`}>
                     <span className={styles.statName}>{key}</span>
                     <span className={styles.statNumber}>{value}</span>
                   </li>
