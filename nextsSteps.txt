@@ -1,0 +1,7 @@
+ estilizar y modificar user guide
+
+ migrar de reduxTLK a Zustand
+
+ mover resources a public
+
+ convertir a PWA

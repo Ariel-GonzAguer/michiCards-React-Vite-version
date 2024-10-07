@@ -69,7 +69,10 @@ form {
 
     & .lookMichi {
       all: unset;
-      border: 1px solid black;
+      border-bottom: 2px solid #a7a7a8;
+      border-right: 2px solid #a7a7a8;
+      border-left: 2px solid #e6dee0;
+      border-top: 2px solid #e6dee0;
       padding: 6px;
       background-color: rgb(231, 231, 231);
       font-family: "Press Start 2P", monospace;
@@ -81,6 +84,12 @@ form {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover {
+        background-color: rgb(190, 190, 190);
+        cursor: pointer;
+        
+      }
     }
 
     & .photoInput {
@@ -158,6 +167,7 @@ form {
   margin: 10px auto;
   font-family: "Press Start 2P", monospace;
   font-size: 0.7rem;
+  border-radius: 0px;
 }
 
 .backBtn {

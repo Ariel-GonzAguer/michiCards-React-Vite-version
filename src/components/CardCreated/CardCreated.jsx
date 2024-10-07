@@ -91,7 +91,7 @@ export default function CardCreated() {
           ))}
         </ul>
 
-        <footer>
+        <footer className={styles.footer}>
           <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
         </footer>
       </section>

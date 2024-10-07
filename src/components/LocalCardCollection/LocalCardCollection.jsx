@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteCard } from "../../redux/localCardsSlice";
@@ -52,7 +52,7 @@ export default function LocalCardCollection() {
 
   // modal
   const modalContent = {
-    text: "Delete this card forever?",
+    text: "You want to delete this card forever?",
     close: { text: "Cancel", class: "cancel" },
     button_Two: (
       <button
@@ -119,7 +119,7 @@ export default function LocalCardCollection() {
               <p className={styles.atributtes}>{card.atributtes}</p>
 
               <ul className={styles.stats}>
-                {Object.entries(card.stats).map(([key, value], statIndex) => (
+                {Object.entries(card.stats).map(([key, value]) => (
                   <li key={`${value}*${Math.random() * 1000}`}>
                     <span className={styles.statName}>{key}</span>
                     <span className={styles.statNumber}>{value}</span>
@@ -127,7 +127,7 @@ export default function LocalCardCollection() {
                 ))}
               </ul>
 
-              <footer>
+              <footer className={styles.footer}>
                 <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
               </footer>
             </section>

@@ -66,26 +66,25 @@ export default function CreateCard() {
   async function OnClick_getRandomImg(e) {
     e.preventDefault();
     try {
-      while (true) {
+      let imageUrl = null;
+      do {
         const response = await fetch(
           "https://api.thecatapi.com/v1/images/search"
         );
-        if (response.ok) {
-          const jsonResponse = await response.json();
-          if (
-            (await jsonResponse[0]["width"]) <= "500" &&
-            (await jsonResponse[0]["height"]) <= "500"
-          ) {
-            setImage(() => jsonResponse[0]["url"]);
-            setPreview(() => jsonResponse[0]["url"]);
-            break;
-          }
-        } else {
+        if (!response.ok) {
           throw new Error("Error al obtener la imagen");
         }
-      }
+        const jsonResponse = await response.json();
+        const { width, height, url } = jsonResponse[0];
+        if (width <= 500 && height <= 500) {
+          imageUrl = url;
+        }
+      } while (!imageUrl);
+
+      setImage(imageUrl);
+      setPreview(imageUrl);
     } catch (error) {
-      console.error(Error);
+      console.error("Error:", error);
     }
   }
 
@@ -94,10 +93,18 @@ export default function CreateCard() {
     const file = e.target.files[0];
 
     if (file) {
+      // Verifica que el archivo sea una imagen
+      if (!file.type.startsWith("image/")) {
+        console.error("El archivo seleccionado no es una imagen");
+        return;
+      }
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result);
         setPreview(reader.result);
+      };
+      reader.onerror = (error) => {
+        console.error("Error al leer el archivo:", error);
       };
       reader.readAsDataURL(file);
     }
