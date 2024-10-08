@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../HomePage.module.css";
 
-import errorGifCat from "../../../resources/img/errorGifCat.webp";
+import errorGifCat from "/img/errorGifCat.webp";
 
 export default function GifContainer() {
   const [gif, setGif] = useState(

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../HomePage.module.css";
-import arrow from "../../../resources/icons/arrow.png";
+import arrow from "/icons/arrow.png";
 
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -2,6 +2,6 @@
 
  migrar de reduxTLK a Zustand
 
- mover resources a public
-
  convertir a PWA
+
+ ** pendiente alinear ::marker con texto de summary en user guide

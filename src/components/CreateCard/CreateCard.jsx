@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal/Modal";
 
-import coolRedCat from "../../resources/img/coolCat.jpg";
+import coolRedCat from "/img/coolRedCat.jpg";
 import styles from "./CreateCard.module.css";
 
 export default function CreateCard() {

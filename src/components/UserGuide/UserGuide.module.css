@@ -2,41 +2,67 @@
   margin: 0 auto;
   background-color: pink;
   border: 10px solid black;
-}
 
-h1 {
-  font-size: 2rem;
-  margin: 60px auto;
-}
+  & h1 {
+    font-size: 2rem;
+    margin: 60px auto;
+  }
 
-.p_Guide {
-  margin: 0 10px 60px;
-  line-height: 1.7rem;
+  & p {
+    margin: 0 10px 60px;
+    line-height: 1.7rem;
+  }
+
+  & li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+
+    & .icon {
+      font-size: 2.5rem;
+      margin: 10px;
+      color: palevioletred;
+    }
+  }
 }
 
 details {
+  margin: 0 auto;
   margin-bottom: 30px;
   line-height: 1.7rem;
   background-color: white;
   padding: 5px 15px;
-  border: 10px solid pink;
-}
+  width: 95%;
+  border: 10px double palevioletred;
 
-summary {
-  font-size: 1.3rem;
+  & summary {
+    font-size: 1.3rem;
+
+    & open {
+      margin-bottom: 15px;
+    }
+
+    &&::marker {
+      color: palevioletred;
+    }
+  }
 }
 
 .backBtn {
   height: 40px;
   width: 80px;
   margin-bottom: 10px;
-  font-family: 'Press Start 2P', monospace;
+  font-family: "Press Start 2P", monospace;
 }
 
 .hey {
-  background-color: #1B1C1E;
-  color: white;
+  background-color: palevioletred;
+  color: black;
   padding: 6px;
+  width: 100%;
 }
 
 .hey2 {
