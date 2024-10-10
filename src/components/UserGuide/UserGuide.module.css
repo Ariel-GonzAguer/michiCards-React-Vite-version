@@ -27,6 +27,11 @@
       color: palevioletred;
     }
   }
+
+  & .icon {
+    font-size: 2.5rem;
+    margin: 0 auto;
+  }
 }
 
 details {
@@ -38,14 +43,45 @@ details {
   width: 95%;
   border: 10px double palevioletred;
 
-  & summary {
-    font-size: 1.3rem;
-
-    & open {
-      margin-bottom: 15px;
+  &[open] {
+    & .summaryTitle {
+      color: palevioletred;
     }
+  }
+
+  & summary {
+    font-size: 1.1rem;
 
     &&::marker {
+      content: none;
+    }
+  }
+
+  & .closeBtn {
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.2rem;
+    background-color: palevioletred;
+    color: white;
+    padding: 6px;
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  & .pDetails {
+    margin: 1rem auto;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  & .noFlex {
+    margin: 1rem auto;
+    font-size: 0.9rem;
+
+    & a {
       color: palevioletred;
     }
   }

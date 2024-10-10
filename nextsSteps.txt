@@ -1,7 +1,3 @@
- estilizar y modificar user guide
-
  migrar de reduxTLK a Zustand
 
  convertir a PWA
-
- ** pendiente alinear ::marker con texto de summary en user guide
