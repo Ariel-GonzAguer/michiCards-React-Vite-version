@@ -33,7 +33,7 @@ export default function GifContainer() {
   }, [gif]);
 
   return (
-    <div className={styles.gifContainer}>
+    <div className={styles.gifContainer} data-testid="gif-container">
       {gif ? (
         <img
           className={styles.michiGif}

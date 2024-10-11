@@ -19,7 +19,7 @@ export default function LocalCardCollection() {
 
   const [open, setOpen] = useState(false);
   const [cardKeyToDelete, setCardKeyToDelete] = useState(null);
-  const [modalPosition, setModalPosition] = useState({ top: 550, left: 21 });
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
   const cardRefs = useRef({});
 
   // router
@@ -57,6 +57,7 @@ export default function LocalCardCollection() {
     button_Two: (
       <button
         className={stylesModal.button_Two}
+        data-testid={`confirm-delete-button`}
         onClick={() => {
           handleDelete(cardKeyToDelete);
           setOpen(false);
@@ -88,9 +89,8 @@ export default function LocalCardCollection() {
         }
 
         return (
-          <>
-            <section
-              key={card.key}
+          <section key={card.key}>
+            <div
               id={`card-${card.key}`}
               ref={(el) => (cardRefs.current[`card-${index}`] = el)}
               className={`${styles.newCard} ${styles[rarity]}`}
@@ -130,20 +130,25 @@ export default function LocalCardCollection() {
               <footer className={styles.footer}>
                 <p id="footerCard">Developed by Ariel Gonz-Agüer</p>
               </footer>
-            </section>
+            </div>
             <button
               className={styles.deleteButton}
-              onClick={() => openModalToDelete(card.key)}
+              data-testid={`delete-button-${card.key}`}
+              onClick={() => openModalToDelete(card.key, `card-${index}`)}
             >
               Delete Card
             </button>
-          </>
+          </section>
         );
       })}
       {open && (
         <div
           className={styles.modalDelete}
-          style={{ top: modalPosition.top, left: modalPosition.left }}
+          style={{
+            top: modalPosition.top,
+            left: modalPosition.left,
+            transform: "translate(10%)", //pendiente de ajustar
+          }}
         >
           <Modal setOpen={setOpen} modalContent={modalContent} />
         </div>
