@@ -1,0 +1,22 @@
+{
+  "name": "MichiCards",
+  "short_name": "MichiCards",
+  "description": "Create Your Own MichiCards Collection!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "pink",
+  "theme_color": "black",
+  "icons": [
+    {
+      "src": "/icons/shieldCatSolidFontAwsome.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/shieldCatSolidFontAwsome.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
