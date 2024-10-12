@@ -43,7 +43,7 @@ export default function LocalCardCollection() {
     if (cardElement) {
       const rect = cardElement.getBoundingClientRect();
       setModalPosition({
-        top: rect.top + window.scrollY,
+        top: (rect.top + window.scrollY),
         left: rect.left + window.scrollX,
       });
     }

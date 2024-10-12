@@ -194,6 +194,8 @@
 
 .modalDelete {
   position: absolute;
+  margin-top: 600px;
+  margin-left: -17px;
   z-index: 1000;
   border-radius: 10px;
   width: 90%;
