@@ -4,8 +4,8 @@
   "description": "Create Your Own MichiCards Collection!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "pink",
-  "theme_color": "black",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "/icons/shieldCatSolidFontAwsome.svg",
