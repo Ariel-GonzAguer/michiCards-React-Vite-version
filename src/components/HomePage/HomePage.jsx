@@ -14,8 +14,10 @@ export default function HomePage() {
   useEffect(() => {
     setTimeout(() => {
       setIntro(false);
-    }, 2600);
+    }, 3000);
   }, []);
+
+
 
   return (
     <>
@@ -23,7 +25,7 @@ export default function HomePage() {
 
       <div className={styles.HomePage}>
         <Header className={styles.header} />
-        <GifContainer className={styles.gifContainer} />
+        <GifContainer className={styles.gifContainer}/>
         <Menu className={styles.menu} />
         <Stats className={styles.stats} />
         <Footer />

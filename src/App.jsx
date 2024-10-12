@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
 
 import Root from "./components/Root/Root"
@@ -8,6 +9,8 @@ import CardCreated from "./components/CardCreated/CardCreated"
 import LocalCardCollection from "./components/LocalCardCollection/LocalCardCollection"
 
 export default function App() {
+ 
+
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<HomePage />} />
