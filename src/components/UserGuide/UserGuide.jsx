@@ -231,10 +231,10 @@ export default function UserGuide() {
           This web project is created around different sources.
           <br />
           <br />
-          The gifs that load on the Home Page are obtained through the{" "}
+          The gifs that load on the Home Page was downloaded through the{" "}
           <a href="https://cataas.com/" target="_blank">
-            CATAAS API.
-          </a>
+            CATAAS API
+          </a>{" "}and are stored in the project's file system.
           <br />
           Random pictures for the Card images are obtained using{" "}
           <a href="https://thecatapi.com/" target="_blank">

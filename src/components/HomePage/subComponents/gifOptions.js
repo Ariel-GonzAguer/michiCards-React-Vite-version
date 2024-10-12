@@ -7,10 +7,24 @@ import siete from "/gifs/siete.gif";
 import ocho from "/gifs/ocho.gif";
 import nueve from "/gifs/nueve.gif";
 import diez from "/gifs/diez.gif";
+import once from "/gifs/once.webp";
+import trece from "/gifs/trece.gif";
 
 import errorGifCat from "/gifs/errorGifCat.webp";
 
-const gifArray = [uno, dos, cuatro, cinco, seis, siete, ocho, nueve, diez];
+const gifArray = [
+  uno,
+  dos,
+  cuatro,
+  cinco,
+  seis,
+  siete,
+  ocho,
+  nueve,
+  diez,
+  once,
+  trece,
+];
 
 export default function getGif() {
   try {
