@@ -41,7 +41,6 @@ This project is mostly used by:
 ## Next Steps
 - [ ]  Include [Cloudinary](https://cloudinary.com/) technolgy to edit the images before create a new card.
 - [ ]  Allow users to save cards with photos taken by them.
-- [ ]  Create
 ## License
 
 MichiCards - Copyright (C) [2024] Ariel Gonzales Agüero (Ariel GonzAguer)
