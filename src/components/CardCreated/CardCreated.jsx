@@ -86,7 +86,7 @@ export default function CardCreated() {
           {Object.entries(stats).map(([key, value]) => (
             <li key={key}>
               <span className={styles.statName}>{key}</span>
-              <span className={styles.statNumber}>{value}</span>
+              <span>{value}</span>
             </li>
           ))}
         </ul>

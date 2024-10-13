@@ -23,7 +23,7 @@
   position: absolute;
   top: 0;
   left: 0px;
-  z-index: 1;
+  line-height: 2rem;
   padding: 10px;
 }
 
@@ -126,13 +126,24 @@ a:active {
 /*4. Media queries*/
 @media only screen and (min-width: 600px) {
   .HomePage {
-    /* border: 10px solid red; */
-    width: 100%;
+    .header {
+      width: 70%;
+      margin: 0 auto;
+    }
 
     & .stats {
       & li {
         font-size: 0.9rem;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .HomePage {
+    .header {
+      width: 50%;
+      margin: 0 auto;
     }
   }
 }
