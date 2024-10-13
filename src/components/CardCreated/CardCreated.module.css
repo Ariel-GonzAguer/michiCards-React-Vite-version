@@ -162,7 +162,6 @@
   }
 }
 
-
 /* collection */
 .deleteButton {
   margin: 0 auto 15px;
@@ -199,4 +198,34 @@
   z-index: 1000;
   border-radius: 10px;
   width: 90%;
+}
+
+@media only screen and (min-width: 600px){
+  .newCard {
+    width: 50%;
+  }
+
+  .stats {
+    grid-area: 4/1/5/6;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+  
+    & li {
+      font-size: 0.7rem;
+    }
+  }
+
+  .modalDelete {
+    position: absolute;
+    margin-top: 700px;
+    margin-left: -42px;
+    z-index: 1000;
+    border-radius: 10px;
+    width: 50%;
+  }
+
 }

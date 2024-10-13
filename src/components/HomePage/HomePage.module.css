@@ -8,6 +8,7 @@
   margin: 0 auto;
   background-color: pink;
   border: 10px solid black;
+  cursor: default;
 }
 
 .intro {
@@ -123,24 +124,16 @@ a:active {
 }
 
 /*4. Media queries*/
-@media only screen and (min-width: 390px) and (max-width: 600px) {
-  h1 {
-    font-size: 1.51rem;
-  }
+@media only screen and (min-width: 600px) {
+  .HomePage {
+    /* border: 10px solid red; */
+    width: 100%;
 
-  /*3. homePageCard styles*/
-  .menuButton {
-    margin: 10px auto 10px 10px;
-    font-size: 0.9rem;
-  }
-
-  .statLi {
-    font-size: 0.51rem;
-  }
-
-  footer {
-    font-size: 0.55rem;
-    line-height: 2rem;
+    & .stats {
+      & li {
+        font-size: 0.9rem;
+      }
+    }
   }
 }
 

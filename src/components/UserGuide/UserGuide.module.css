@@ -2,6 +2,7 @@
   margin: 0 auto;
   background-color: pink;
   border: 10px solid black;
+  cursor: default;
 
   & h1 {
     font-size: 2rem;
@@ -51,6 +52,7 @@ details {
 
   & summary {
     font-size: 1.1rem;
+    cursor: pointer;
 
     &&::marker {
       content: none;
@@ -107,4 +109,12 @@ details {
 
 .hey a {
   background-color: grey;
+}
+
+@media only screen and (min-width: 600px){ 
+  .guide { 
+    & details {
+      width: 50%;
+    }
+  }
 }

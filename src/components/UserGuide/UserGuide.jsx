@@ -52,16 +52,12 @@ export default function UserGuide() {
             <FontAwesomeIcon icon={faWifi} className={styles.icon} /> It is
             essential that the device have an internet connection to use the
             app. <br />
-            PREFERABLY use a Wi-Fi connection, as the App can consume several
+            PREFERABLY use a Wi-Fi connection, as the App can consume some
             megabytes.
           </li>
           <li>
             <FontAwesomeIcon icon={faMobileScreen} className={styles.icon} />{" "}
-            The app is designed to be used on mobile devices with conventional
-            size screens. On laptops, desktop computers and tablets{" "}
-            <span className={styles.hey}>
-              THE IMAGES COULD LOOK KINDA WEIRD, LIKE VERY SMALL.
-            </span>
+            The app is focused to be used on mobile devices, but You can use it in laptops, desktop computers and tablets.
           </li>
           <li>
             <FontAwesomeIcon icon={faArrowsUpDown} className={styles.icon} /> To
@@ -257,8 +253,10 @@ export default function UserGuide() {
           </a>
           .
           <br />
-          And the font comes from{" "}
+          The font comes from{" "}
           <a href="https://fonts.google.com/">Google Fonts</a>.
+          <br />
+          The background image that you can see when use the Web App in bigger screens is from{" "} <a href="https://wallpapers.com/wallpapers/cute-cat-pattern-1h8qjydj05zebbzr/download">Wallpapers.com</a> and was created by Vadik2.
         </p>
 
         <button

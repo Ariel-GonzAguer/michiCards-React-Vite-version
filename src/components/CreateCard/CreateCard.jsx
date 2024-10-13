@@ -157,7 +157,10 @@ export default function CreateCard() {
           <h2>Set the Michi Stats</h2>
           {Object.entries(stats).map(([key, value]) => (
             <div key={key} className={styles.statsContainer}>
-              <label htmlFor={key}>
+              <label
+                htmlFor={key}
+                className={key === "agility" ? styles.agilityLabel : ""}
+              >
                 {key.charAt(0).toUpperCase() + key.slice(1)}
               </label>
               <input
@@ -187,7 +190,7 @@ export default function CreateCard() {
             <label htmlFor="photo" className={styles.lookMichi}>
               Take your own picture
             </label>
-            <br />
+
             <input
               type="file"
               name="photo"

@@ -1,32 +1,65 @@
-# MichiCards(React version)!
-## Create Your Own Michi Card Collection! :smiley_cat:
+# MichiCards - New version 1.3.0 // 12.oct.24
 
-Welcome to this web app, where You can create your very own Kitty Cat Card Collection.\
-This project is the same than [MichiCard(html, css, js version)](https://github.com/diosDeNada/michiCards-pure-HTML-CSS-JS-version-) but made it with [React](https://react.dev/), [Redux](https://redux-toolkit.js.org/) and [Vite](https://vitejs.dev/).\
-With this web app You can create cards similar to other card games like Pokemon, but Cat based.\
-Take a screenshot and share it with your friends :smiley_cat:\
-The card is only yours :smirk_cat:
-- - - 
+Welcome to this Web App (now PWA!) where you can create your own MichiCards.
+MichiCards are Pokémon-like cards but based on cats (or Michis, as we call kittens among many names in Latin America).
+This is the optimized version of the (old and) original project [MichiCard](https://github.com/Ariel-GonzAguer/michiCards-pure-HTML-CSS-JS-version-).
 
 
-### Features
-- You can choose all, from the name of the Michi, to the image of your card.
-- Two *'Feral Cards'*, that are *rare* types of cards. Go for them!
-- NEW! Now made it with React. The App works smoother.
-- NEW! Navigation improved with React Router.
-- NEW! The cards made with Random pictures are saved in Local Storage.
+## Tech Stack
+
+- React.
+- Vite.
+- React Router DOM .
+- Redux TLK.
+- Jest.
+- React Testing Library.
+- jsdom.
+- Redux Mock Store.
+- Vitest.
+- Vite PWA.
+- FontAwesome.
 
 
-### Device considerations
-- :signal_strength: It is essential that the device have an internet connection to use the app.
-- :iphone: The app is designed to be used on mobile devices with small size screens. On laptops, desktop computers and tablets **THE IMAGES COULD LOOK WEIRD, LIKE VERY SMALL.**.
-- :arrow_up_down: To avoid image distortion, the device must be placed vertically (not panoramic) when taking the screenshot.
 
-### Next improvements
-- Refactor the code to make it more concise. Right now there is a good portion of the code that is repeated, mostly jsx and css.
-- Add some middleware to reduce the size of images and gifs. Currently several megabytes are consumed. The initial gif changes with each rendering of the home page... One option would be to limit the number of gifs that can appear, or leave only one(per session?), but this could limit the user experience.
-- Add a database to be able to save cards created with user photos within the same collection as cards created with random pictures. At the moment only those created with random pictures are stored in the browser's Local Storage, as indicated in the User Guide.
-- Allow the user to share the cards created as images on social networks.
+## Features
 
-### Want to collaborate?
-Just send a message! :cat:
+- Fully customizable card.
+- Three types of cards. Two of rare type.
+- PWA. You can install the Web App.
+- Card Collection using user´s browser local storage.
+- Focused to be used in movil devices.
+
+
+## Used By
+
+This project is mostly used by:
+
+- Cool people.
+- Cats **(secretly 🤫)**.
+
+
+## Next Steps
+- [ ]  Include [Cloudinary](https://cloudinary.com/) technolgy to edit the images before create a new card.
+- [ ]  Allow users to save cards with photos taken by them.
+- [ ]  Create
+## License
+
+MichiCards - Copyright (C) [2024] Ariel Gonzales Agüero (Ariel GonzAguer)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+Contributions:
+If you wish to contribute to MichiCards, please contact me first at ariegonzaguer@gmail.com.
+
+GitHub Repository: [MichiCards!](https://github.com/Ariel-GonzAguer/michiCards-React-Vite-version)

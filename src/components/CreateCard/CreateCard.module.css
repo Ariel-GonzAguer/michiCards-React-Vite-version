@@ -8,6 +8,7 @@
   margin: 0 auto;
   background-color: pink;
   border: 10px solid black;
+  cursor: default;
 
   & h1 {
     font-size: 1.5rem;
@@ -90,7 +91,6 @@ form {
       &:hover {
         background-color: rgb(190, 190, 190);
         cursor: pointer;
-        
       }
     }
 
@@ -187,4 +187,92 @@ form {
 .backBtn a:active {
   text-decoration: none;
   color: black;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .createMichiCard {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  form {
+    & .michiName {
+      width: 70%;
+      height: 5rem;
+      font-size: 1.5rem;
+    }
+
+    .charCount {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 auto 20px;
+    }
+
+    .statsContainer {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      & .agilityLabel {
+        font-size: 0.99rem;
+      }
+
+      & .agilityLabel::before {
+        content: "_"; /* Añade el guion bajo doble antes del texto */
+        color: pink; /* Cambia el color del guion bajo */
+        font-weight: bold; /* Haz el guion bajo en negrita */
+        margin-right: 4px; /* Añade un margen a la derecha */
+      }
+
+      & .michiStats {
+        width: 50%;
+        display: flex;
+        margin: 10px auto;
+      }
+    }
+
+    .michiPreview {
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .createMichiCard {
+    width: 100vw;
+
+  }
+
+  form {
+    .statsContainer {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      & .agilityLabel {
+        font-size: 0.99rem;
+      }
+
+      & .agilityLabel::before {
+        content: "_"; /* Añade el guion bajo doble antes del texto */
+        color: pink; /* Cambia el color del guion bajo */
+        font-weight: bold; /* Haz el guion bajo en negrita */
+        margin-right: 4px; /* Añade un margen a la derecha */
+      }
+
+      & .michiStats {
+        width: 50%;
+        display: flex;
+        margin: 10px auto;
+      }
+    }
+
+    .michiPreview {
+      width: 30%;
+      height: auto;
+    }
+  }
 }
