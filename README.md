@@ -41,24 +41,7 @@ This project is mostly used by:
 ## Next Steps
 - [ ]  Include [Cloudinary](https://cloudinary.com/) technolgy to edit the images before create a new card.
 - [ ]  Allow users to save cards with photos taken by them.
-## License
 
-MichiCards - Copyright (C) [2024] Ariel Gonzales Agüero (Ariel GonzAguer)
+## Licencia
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-Contributions:
-If you wish to contribute to MichiCards, please contact me first at ariegonzaguer@gmail.com.
-
-GitHub Repository: [MichiCards!](https://github.com/Ariel-GonzAguer/michiCards-React-Vite-version)
+Este proyecto está licenciado bajo los términos de la [Licencia Pública General GNU versión 3](LICENSE).
